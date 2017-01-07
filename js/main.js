@@ -1,6 +1,5 @@
 var Nakama = {};
-Nakama.configs = {
-}
+Nakama.configs = {};
 
 window.onload = function(){
   Nakama.game = new Phaser.Game(640,960,Phaser.AUTO,'',
@@ -23,16 +22,21 @@ var preload = function(){
   Nakama.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
 
   Nakama.game.time.advancedTiming = true;
+
+  Nakama.game.load.atlasJSONHash('assets', 'Assets/assets.png', 'Assets/assets.json');
+  Nakama.game.load.image('background', 'Assets/Map1.png');
 }
 
 // initialize the game
 var create = function(){
   Nakama.game.physics.startSystem(Phaser.Physics.ARCADE);
-  Nakama.keyboard = Nakama.game.input.keyboard; 
+  Nakama.keyboard = Nakama.game.input.keyboard;
 }
 
 // update game state each frame
-var update = function(){}
+var update = function(){
+
+}
 
 // before camera render (mostly for debug)
 var render = function(){}
