@@ -188,82 +188,84 @@
         </struct>
         <key>individualSpriteSettings</key>
         <map type="IndividualSpriteSettingsMap">
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/BossHealthBar.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/BossHealthBarBG.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/BossHealthBarMask.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/BossType1.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/BossType1Wings.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/BottomArtwork.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/BulletType1.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/BulletType1Upgraded.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/BulletType2.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/BulletType2Propulsory.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/BulletType2Upgraded.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/BulletType3.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/BulletType3Upgraded.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/CollectibleStar.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/EnemyBulletType1.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/EnemyBulletType2.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/EnemyBulletType3.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/EnemyBulletType3Origin.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/EnemyBulletType4.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/EnemyType1.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/EnemyType2.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/EnemyType3.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/EnemyType4.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/EnemyType4Base.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Explode.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/PlayerHealthBar.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/PlayerHealthBarBG.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/PlayerHealthBarMask.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Propul-1-1.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Propul-1-2.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Propul-1-3.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Propul-1-4.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Propul-2D-1.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Propul-2D-2.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Propul-2D-3.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Propul-2D-4.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Propul-2L-1.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Propul-2L-2.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Propul-2L-3.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Propul-2L-4.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Propul-2R-1.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Propul-2R-2.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Propul-2R-3.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Propul-2R-4.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Propul-3D-1.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Propul-3D-2.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Propul-3D-3.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Propul-3D-4.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Propul-3L-1.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Propul-3L-2.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Propul-3L-3.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Propul-3L-4.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Propul-3R-1.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Propul-3R-2.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Propul-3R-3.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Propul-3R-4.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Shield.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/ShipType3Support.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Spaceship1-Partner.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Spaceship1-Player.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Spaceship1Left-Partner.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Spaceship1Left-Player.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Spaceship1Right-Partner.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Spaceship1Right-Player.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Spaceship2-Partner.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Spaceship2-Player.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Spaceship2Left-Partner.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Spaceship2Left-Player.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Spaceship2Right-Partner.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Spaceship2Right-Player.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Spaceship3-Partner.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Spaceship3-Player.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Spaceship3Left-Partner.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Spaceship3Left-Player.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Spaceship3Right-Partner.png</key>
-            <key type="filename">../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Spaceship3Right-Player.png</key>
+            <key type="filename">Original Sprites/BossHealthBar.png</key>
+            <key type="filename">Original Sprites/BossHealthBarBG.png</key>
+            <key type="filename">Original Sprites/BossHealthBarMask.png</key>
+            <key type="filename">Original Sprites/BossType1.png</key>
+            <key type="filename">Original Sprites/BossType1Wings.png</key>
+            <key type="filename">Original Sprites/BottomArtwork.png</key>
+            <key type="filename">Original Sprites/BulletType1.png</key>
+            <key type="filename">Original Sprites/BulletType1Upgraded.png</key>
+            <key type="filename">Original Sprites/BulletType2.png</key>
+            <key type="filename">Original Sprites/BulletType2Propulsory.png</key>
+            <key type="filename">Original Sprites/BulletType2Upgraded.png</key>
+            <key type="filename">Original Sprites/BulletType3.png</key>
+            <key type="filename">Original Sprites/BulletType3Upgraded.png</key>
+            <key type="filename">Original Sprites/CollectibleStar.png</key>
+            <key type="filename">Original Sprites/EnemyBulletType1.png</key>
+            <key type="filename">Original Sprites/EnemyBulletType2.png</key>
+            <key type="filename">Original Sprites/EnemyBulletType3.png</key>
+            <key type="filename">Original Sprites/EnemyBulletType3Origin.png</key>
+            <key type="filename">Original Sprites/EnemyBulletType4.png</key>
+            <key type="filename">Original Sprites/EnemyType1.png</key>
+            <key type="filename">Original Sprites/EnemyType2.png</key>
+            <key type="filename">Original Sprites/EnemyType3.png</key>
+            <key type="filename">Original Sprites/EnemyType4.png</key>
+            <key type="filename">Original Sprites/EnemyType4Base.png</key>
+            <key type="filename">Original Sprites/Explode.png</key>
+            <key type="filename">Original Sprites/PauseButton.png</key>
+            <key type="filename">Original Sprites/PlayerHealthBar.png</key>
+            <key type="filename">Original Sprites/PlayerHealthBarBG.png</key>
+            <key type="filename">Original Sprites/PlayerHealthBarMask.png</key>
+            <key type="filename">Original Sprites/Propul-1-1.png</key>
+            <key type="filename">Original Sprites/Propul-1-2.png</key>
+            <key type="filename">Original Sprites/Propul-1-3.png</key>
+            <key type="filename">Original Sprites/Propul-1-4.png</key>
+            <key type="filename">Original Sprites/Propul-2D-1.png</key>
+            <key type="filename">Original Sprites/Propul-2D-2.png</key>
+            <key type="filename">Original Sprites/Propul-2D-3.png</key>
+            <key type="filename">Original Sprites/Propul-2D-4.png</key>
+            <key type="filename">Original Sprites/Propul-2L-1.png</key>
+            <key type="filename">Original Sprites/Propul-2L-2.png</key>
+            <key type="filename">Original Sprites/Propul-2L-3.png</key>
+            <key type="filename">Original Sprites/Propul-2L-4.png</key>
+            <key type="filename">Original Sprites/Propul-2R-1.png</key>
+            <key type="filename">Original Sprites/Propul-2R-2.png</key>
+            <key type="filename">Original Sprites/Propul-2R-3.png</key>
+            <key type="filename">Original Sprites/Propul-2R-4.png</key>
+            <key type="filename">Original Sprites/Propul-3D-1.png</key>
+            <key type="filename">Original Sprites/Propul-3D-2.png</key>
+            <key type="filename">Original Sprites/Propul-3D-3.png</key>
+            <key type="filename">Original Sprites/Propul-3D-4.png</key>
+            <key type="filename">Original Sprites/Propul-3L-1.png</key>
+            <key type="filename">Original Sprites/Propul-3L-2.png</key>
+            <key type="filename">Original Sprites/Propul-3L-3.png</key>
+            <key type="filename">Original Sprites/Propul-3L-4.png</key>
+            <key type="filename">Original Sprites/Propul-3R-1.png</key>
+            <key type="filename">Original Sprites/Propul-3R-2.png</key>
+            <key type="filename">Original Sprites/Propul-3R-3.png</key>
+            <key type="filename">Original Sprites/Propul-3R-4.png</key>
+            <key type="filename">Original Sprites/ReadyButton.png</key>
+            <key type="filename">Original Sprites/Shield.png</key>
+            <key type="filename">Original Sprites/ShipType3Support.png</key>
+            <key type="filename">Original Sprites/Spaceship1-Partner.png</key>
+            <key type="filename">Original Sprites/Spaceship1-Player.png</key>
+            <key type="filename">Original Sprites/Spaceship1Left-Partner.png</key>
+            <key type="filename">Original Sprites/Spaceship1Left-Player.png</key>
+            <key type="filename">Original Sprites/Spaceship1Right-Partner.png</key>
+            <key type="filename">Original Sprites/Spaceship1Right-Player.png</key>
+            <key type="filename">Original Sprites/Spaceship2-Partner.png</key>
+            <key type="filename">Original Sprites/Spaceship2-Player.png</key>
+            <key type="filename">Original Sprites/Spaceship2Left-Partner.png</key>
+            <key type="filename">Original Sprites/Spaceship2Left-Player.png</key>
+            <key type="filename">Original Sprites/Spaceship2Right-Partner.png</key>
+            <key type="filename">Original Sprites/Spaceship2Right-Player.png</key>
+            <key type="filename">Original Sprites/Spaceship3-Partner.png</key>
+            <key type="filename">Original Sprites/Spaceship3-Player.png</key>
+            <key type="filename">Original Sprites/Spaceship3Left-Partner.png</key>
+            <key type="filename">Original Sprites/Spaceship3Left-Player.png</key>
+            <key type="filename">Original Sprites/Spaceship3Right-Partner.png</key>
+            <key type="filename">Original Sprites/Spaceship3Right-Player.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -271,82 +273,84 @@
         </map>
         <key>fileList</key>
         <array>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/BossHealthBar.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/BossHealthBarBG.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/BossHealthBarMask.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/BossType1.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/BossType1Wings.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/BottomArtwork.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/BulletType1.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/BulletType1Upgraded.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/BulletType2.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/BulletType2Propulsory.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/BulletType2Upgraded.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/BulletType3.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/BulletType3Upgraded.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/CollectibleStar.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/EnemyBulletType1.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/EnemyBulletType2.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/EnemyBulletType3.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/EnemyBulletType3Origin.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/EnemyBulletType4.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/EnemyType1.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/EnemyType2.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/EnemyType3.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/EnemyType4.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/EnemyType4Base.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Explode.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/PlayerHealthBar.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/PlayerHealthBarBG.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/PlayerHealthBarMask.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Propul-1-1.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Propul-1-2.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Propul-1-3.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Propul-1-4.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Propul-2D-1.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Propul-2D-2.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Propul-2D-3.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Propul-2D-4.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Propul-2L-1.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Propul-2L-2.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Propul-2L-3.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Propul-2L-4.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Propul-2R-1.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Propul-2R-2.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Propul-2R-3.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Propul-2R-4.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Propul-3D-1.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Propul-3D-2.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Propul-3D-3.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Propul-3D-4.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Propul-3L-1.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Propul-3L-2.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Propul-3L-3.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Propul-3L-4.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Propul-3R-1.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Propul-3R-2.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Propul-3R-3.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Propul-3R-4.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Shield.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/ShipType3Support.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Spaceship1-Partner.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Spaceship1-Player.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Spaceship1Left-Partner.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Spaceship1Left-Player.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Spaceship1Right-Partner.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Spaceship1Right-Player.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Spaceship2-Partner.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Spaceship2-Player.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Spaceship2Left-Partner.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Spaceship2Left-Player.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Spaceship2Right-Partner.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Spaceship2Right-Player.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Spaceship3-Partner.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Spaceship3-Player.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Spaceship3Left-Partner.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Spaceship3Left-Player.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Spaceship3Right-Partner.png</filename>
-            <filename>../../../Startwhy/nakama/Nakama/Resources/Images2x.atlas/Spaceship3Right-Player.png</filename>
+            <filename>Original Sprites/BossHealthBar.png</filename>
+            <filename>Original Sprites/BossHealthBarBG.png</filename>
+            <filename>Original Sprites/BossHealthBarMask.png</filename>
+            <filename>Original Sprites/BossType1.png</filename>
+            <filename>Original Sprites/BossType1Wings.png</filename>
+            <filename>Original Sprites/BottomArtwork.png</filename>
+            <filename>Original Sprites/BulletType1.png</filename>
+            <filename>Original Sprites/BulletType1Upgraded.png</filename>
+            <filename>Original Sprites/BulletType2.png</filename>
+            <filename>Original Sprites/BulletType2Propulsory.png</filename>
+            <filename>Original Sprites/BulletType2Upgraded.png</filename>
+            <filename>Original Sprites/BulletType3.png</filename>
+            <filename>Original Sprites/BulletType3Upgraded.png</filename>
+            <filename>Original Sprites/CollectibleStar.png</filename>
+            <filename>Original Sprites/EnemyBulletType1.png</filename>
+            <filename>Original Sprites/EnemyBulletType2.png</filename>
+            <filename>Original Sprites/EnemyBulletType3.png</filename>
+            <filename>Original Sprites/EnemyBulletType3Origin.png</filename>
+            <filename>Original Sprites/EnemyBulletType4.png</filename>
+            <filename>Original Sprites/EnemyType1.png</filename>
+            <filename>Original Sprites/EnemyType2.png</filename>
+            <filename>Original Sprites/EnemyType3.png</filename>
+            <filename>Original Sprites/EnemyType4.png</filename>
+            <filename>Original Sprites/EnemyType4Base.png</filename>
+            <filename>Original Sprites/Explode.png</filename>
+            <filename>Original Sprites/PauseButton.png</filename>
+            <filename>Original Sprites/PlayerHealthBar.png</filename>
+            <filename>Original Sprites/PlayerHealthBarBG.png</filename>
+            <filename>Original Sprites/PlayerHealthBarMask.png</filename>
+            <filename>Original Sprites/Propul-1-1.png</filename>
+            <filename>Original Sprites/Propul-1-2.png</filename>
+            <filename>Original Sprites/Propul-1-3.png</filename>
+            <filename>Original Sprites/Propul-1-4.png</filename>
+            <filename>Original Sprites/Propul-2D-1.png</filename>
+            <filename>Original Sprites/Propul-2D-2.png</filename>
+            <filename>Original Sprites/Propul-2D-3.png</filename>
+            <filename>Original Sprites/Propul-2D-4.png</filename>
+            <filename>Original Sprites/Propul-2L-1.png</filename>
+            <filename>Original Sprites/Propul-2L-2.png</filename>
+            <filename>Original Sprites/Propul-2L-3.png</filename>
+            <filename>Original Sprites/Propul-2L-4.png</filename>
+            <filename>Original Sprites/Propul-2R-1.png</filename>
+            <filename>Original Sprites/Propul-2R-2.png</filename>
+            <filename>Original Sprites/Propul-2R-3.png</filename>
+            <filename>Original Sprites/Propul-2R-4.png</filename>
+            <filename>Original Sprites/Propul-3D-1.png</filename>
+            <filename>Original Sprites/Propul-3D-2.png</filename>
+            <filename>Original Sprites/Propul-3D-3.png</filename>
+            <filename>Original Sprites/Propul-3D-4.png</filename>
+            <filename>Original Sprites/Propul-3L-1.png</filename>
+            <filename>Original Sprites/Propul-3L-2.png</filename>
+            <filename>Original Sprites/Propul-3L-3.png</filename>
+            <filename>Original Sprites/Propul-3L-4.png</filename>
+            <filename>Original Sprites/Propul-3R-1.png</filename>
+            <filename>Original Sprites/Propul-3R-2.png</filename>
+            <filename>Original Sprites/Propul-3R-3.png</filename>
+            <filename>Original Sprites/Propul-3R-4.png</filename>
+            <filename>Original Sprites/ReadyButton.png</filename>
+            <filename>Original Sprites/Shield.png</filename>
+            <filename>Original Sprites/ShipType3Support.png</filename>
+            <filename>Original Sprites/Spaceship1-Partner.png</filename>
+            <filename>Original Sprites/Spaceship1-Player.png</filename>
+            <filename>Original Sprites/Spaceship1Left-Partner.png</filename>
+            <filename>Original Sprites/Spaceship1Left-Player.png</filename>
+            <filename>Original Sprites/Spaceship1Right-Partner.png</filename>
+            <filename>Original Sprites/Spaceship1Right-Player.png</filename>
+            <filename>Original Sprites/Spaceship2-Partner.png</filename>
+            <filename>Original Sprites/Spaceship2-Player.png</filename>
+            <filename>Original Sprites/Spaceship2Left-Partner.png</filename>
+            <filename>Original Sprites/Spaceship2Left-Player.png</filename>
+            <filename>Original Sprites/Spaceship2Right-Partner.png</filename>
+            <filename>Original Sprites/Spaceship2Right-Player.png</filename>
+            <filename>Original Sprites/Spaceship3-Partner.png</filename>
+            <filename>Original Sprites/Spaceship3-Player.png</filename>
+            <filename>Original Sprites/Spaceship3Left-Partner.png</filename>
+            <filename>Original Sprites/Spaceship3Left-Player.png</filename>
+            <filename>Original Sprites/Spaceship3Right-Partner.png</filename>
+            <filename>Original Sprites/Spaceship3Right-Player.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>
