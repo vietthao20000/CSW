@@ -1,8 +1,19 @@
-var Nakama = {};
-Nakama.configs = {};
+var CSW = {};
+CSW.configs = {
+  GAME_WIDTH: 640,
+  GAME_HEIGHT:  960,
+  circleConfig: {
+    anchor:{x:0.5,y:0.5},
+    ratio:0.5
+  },
+  stripeConfig: {
+    anchor:{x:0,y:0.5},
+    ratio:0.9
+  }
+};
 
 window.onload = function(){
-  Nakama.game = new Phaser.Game(640,960,Phaser.AUTO,'',
+  CSW.game = new Phaser.Game(CSW.configs.GAME_WIDTH,CSW.configs.GAME_HEIGHT,Phaser.AUTO,'',
     {
       preload: preload,
       create: create,
@@ -14,29 +25,55 @@ window.onload = function(){
 
 // preparations before game starts
 var preload = function(){
-  Nakama.game.scale.minWidth = 320;
-  Nakama.game.scale.minHeight = 480;
-  Nakama.game.scale.maxWidth = 640;
-  Nakama.game.scale.maxHeight = 960;
-  Nakama.game.scale.pageAlignHorizontally = true;
-  Nakama.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+  CSW.game.scale.pageAlignHorizontally = true;
+  CSW.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
 
-  Nakama.game.time.advancedTiming = true;
+  CSW.game.time.advancedTiming = true;
 
-  Nakama.game.load.atlasJSONHash('assets', 'Assets/assets.png', 'Assets/assets.json');
-  Nakama.game.load.image('background', 'Assets/Map1.png');
+  //CSW.game.load.atlasJSONHash('assets', 'Assets/assets.png', 'Assets/assets.json');
+  //CSW.game.load.image('background', 'Assets/Map1.png');
+  CSW.game.load.image('player','Assets/Textures/Player/Player.png');
+  CSW.game.load.image('circle_cyan','Assets/Textures/Obstacles/Circle/Circle_cyan.png');
+  CSW.game.load.image('circle_pink','Assets/Textures/Obstacles/Circle/Circle_pink.png');
+  CSW.game.load.image('circle_purple','Assets/Textures/Obstacles/Circle/Circle_purple.png');
+  CSW.game.load.image('circle_yellow','Assets/Textures/Obstacles/Circle/Circle_yellow.png');
+  CSW.game.load.image('stripe_cyan','Assets/Textures/Obstacles/Stripes/cyan.png');
+  CSW.game.load.image('stripe_pink','Assets/Textures/Obstacles/Stripes/pink.png');
+  CSW.game.load.image('stripe_purple','Assets/Textures/Obstacles/Stripes/purple.png');
+  CSW.game.load.image('stripe_yellow','Assets/Textures/Obstacles/Stripes/yellow.png');
 }
 
 // initialize the game
 var create = function(){
-  Nakama.game.physics.startSystem(Phaser.Physics.ARCADE);
-  Nakama.keyboard = Nakama.game.input.keyboard;
+  CSW.game.physics.startSystem(Phaser.Physics.P2JS);
+  CSW.keyboard = CSW.game.input.keyboard;
+  CSW.playerGroup = CSW.game.add.physicsGroup();
+  CSW.obstacleGroup = CSW.game.add.physicsGroup();
+
+  CSW.player = new PlayerController("player",{
+    TAP:Phaser.Keyboard.SPACEBAR,
+    speed: 650,
+    direction: new Phaser.Point(0,400)
+  });
+  CSW.circle = new CircleController(CSW.configs.circleConfig);
+
+  CSW.game.physics.p2.enable([CSW.player,CSW.circle]);
+
+  CSW.player.sprite.body.loadPolygon('physicsData','player');
+
+  CSW.circle.sprite.body.loadPolygon('physicsData','circle');
+  //new StripeController(CSW.configs.stripeConfig);
 }
 
 // update game state each frame
 var update = function(){
-
+  CSW.player.update();
+  CSW.game.physics.arcade.overlap(CSW.playerGroup,CSW.obstacleGroup, onTouch);
 }
 
 // before camera render (mostly for debug)
 var render = function(){}
+
+var onTouch = function(player,obstacle) {
+  console.log("touched");
+}
