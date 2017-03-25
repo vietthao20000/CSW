@@ -2,14 +2,6 @@ var CSW = {};
 CSW.configs = {
   GAME_WIDTH: 640,
   GAME_HEIGHT:  960,
-  circleConfig: {
-    anchor:{x:0.5,y:0.5},
-    ratio:0.5
-  },
-  stripeConfig: {
-    anchor:{x:0,y:0.5},
-    ratio:0.9
-  }
 };
 
 window.onload = function(){
@@ -55,20 +47,16 @@ var create = function(){
     speed: 650,
     direction: new Phaser.Point(0,400)
   });
-  CSW.circle = new CircleController(CSW.configs.circleConfig);
 
+  CSW.circle = new CircleController({x: 150, y: 200});
+  CSW.Stripe = new StripeController({x: 450, y: 200});
   CSW.game.physics.p2.enable([CSW.player,CSW.circle]);
-
-  CSW.player.sprite.body.loadPolygon('physicsData','player');
-
-  CSW.circle.sprite.body.loadPolygon('physicsData','circle');
-  //new StripeController(CSW.configs.stripeConfig);
 }
 
 // update game state each frame
 var update = function(){
   CSW.player.update();
-  CSW.game.physics.arcade.overlap(CSW.playerGroup,CSW.obstacleGroup, onTouch);
+  //CSW.game.physics.arcade.overlap(CSW.playerGroup,CSW.obstacleGroup, onTouch);
 }
 
 // before camera render (mostly for debug)
