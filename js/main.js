@@ -33,11 +33,14 @@ var preload = function(){
   CSW.game.load.image('stripe_pink','Assets/Textures/Obstacles/Stripes/pink.png');
   CSW.game.load.image('stripe_purple','Assets/Textures/Obstacles/Stripes/purple.png');
   CSW.game.load.image('stripe_yellow','Assets/Textures/Obstacles/Stripes/yellow.png');
+  CSW.game.load.physics('circle_physics','Assets/Textures/Obstacles/Circle/circle.json');
 }
 
 // initialize the game
 var create = function(){
   CSW.game.physics.startSystem(Phaser.Physics.P2JS);
+  CSW.game.physics.p2.restitution = 0.9;
+
   CSW.keyboard = CSW.game.input.keyboard;
   CSW.playerGroup = CSW.game.add.physicsGroup();
   CSW.obstacleGroup = CSW.game.add.physicsGroup();
@@ -45,12 +48,16 @@ var create = function(){
   CSW.player = new PlayerController("player",{
     TAP:Phaser.Keyboard.SPACEBAR,
     speed: 650,
-    direction: new Phaser.Point(0,400)
+    direction: new Phaser.Point(0,600)
   });
+  CSW.game.physics.p2.enable([CSW.player.sprite],true);
 
-  CSW.circle = new CircleController({x: 150, y: 200});
-  CSW.Stripe = new StripeController({x: 450, y: 200});
-  CSW.game.physics.p2.enable([CSW.player,CSW.circle]);
+  CSW.circle = new CircleController({x: 250, y: 200});
+
+  //CSW.stripe = new StripeController({x: 450, y: 200});
+
+  //console.log(CSW.player.sprite.body.debug);
+  CSW.player.sprite.body.onBeginContact.add(blockHit, this);
 }
 
 // update game state each frame
@@ -62,6 +69,25 @@ var update = function(){
 // before camera render (mostly for debug)
 var render = function(){}
 
-var onTouch = function(player,obstacle) {
-  console.log("touched");
+var blockHit = function (body, bodyB, shapeA, shapeB, equation) {
+  //  The block hit something.
+  //  
+  //  This callback is sent 5 arguments:
+  //  
+  //  The Phaser.Physics.P2.Body it is in contact with. *This might be null* if the Body was created directly in the p2 world.
+  //  The p2.Body this Body is in contact with.
+  //  The Shape from this body that caused the contact.
+  //  The Shape from the contact body.
+  //  The Contact Equation data array.
+  //  
+  //  The first argument may be null or not have a sprite property, such as when you hit the world bounds.
+  if (body)
+  {
+      result = 'You last hit: ' + body.sprite.key;
+  }
+  else
+  {
+      result = 'You last hit: The wall :)';
+  }
+  alert(result);
 }

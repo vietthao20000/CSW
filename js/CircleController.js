@@ -1,7 +1,14 @@
 class CircleController{
   constructor(position) {
+    var circleParts = [];
     CircleController.colors.forEach(function(color) {
-      new ObstacleController(color,CircleController.configs,CircleController.configs.offsetAngle,position);
+      let sprite = new ObstacleController(color,CircleController.configs,CircleController.configs.offsetAngle,position);
+      circleParts.push(sprite.sprite);
+    });
+
+    circleParts.forEach(function(part) {
+      part.body.clearShapes();
+      part.body.loadPolygon('circle_physics', part.spriteName);
     });
   }
 }
