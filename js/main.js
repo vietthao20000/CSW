@@ -37,7 +37,7 @@ var preload = function(){
 
 // initialize the game
 var create = function(){
-  CSW.game.world.setBounds(0, 0, 640, 9600);
+  CSW.game.world.setBounds(0, 0, 640, 960);
   CSW.game.physics.startSystem(Phaser.Physics.P2JS);
   CSW.keyboard = CSW.game.input.keyboard;
   CSW.playerGroup = CSW.game.add.physicsGroup();
@@ -60,6 +60,8 @@ var create = function(){
 // update game state each frame
 var update = function(){
   CSW.player.update();
+  console.log(CSW.player.yChange);
+  CSW.game.world.setBounds(0, -CSW.player.yChange, 640, 960);
   //CSW.game.physics.arcade.overlap(CSW.playerGroup,CSW.obstacleGroup, onTouch);
 }
 
