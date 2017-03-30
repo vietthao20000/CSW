@@ -40,6 +40,7 @@ var preload = function(){
   CSW.game.load.image('stripe_purple','Assets/Textures/Obstacles/Stripes/purple.png');
   CSW.game.load.image('stripe_yellow','Assets/Textures/Obstacles/Stripes/yellow.png');
   CSW.game.load.physics('circle_physics','Assets/Textures/Obstacles/Circle/circle.json');
+  CSW.game.load.physics('stripe_physics','Assets/Textures/Obstacles/Stripes/stripe.json');
 }
 
 // initialize the game
@@ -57,11 +58,11 @@ var create = function(){
     direction: new Phaser.Point(0,600)
   },"purple");
 
-  CSW.game.physics.p2.enable([CSW.player.sprite],true);
+  CSW.game.physics.p2.enable([CSW.player.sprite],false);
 
   CSW.circle = new CircleController({x: 250, y: 200});
 
-  //CSW.stripe = new StripeController({x: 450, y: 200});
+  CSW.stripe = new StripeController({x: 450, y: 200});
 
   //console.log(CSW.player.sprite.body.debug);
   //CSW.player.sprite.body.onBeginContact.add(blockHit, this);
@@ -71,6 +72,7 @@ var create = function(){
 var update = function(){
   CSW.player.update();
   CSW.circle.update();
+  CSW.stripe.update();
   //CSW.game.physics.arcade.overlap(CSW.playerGroup,CSW.obstacleGroup, onTouch);
 }
 

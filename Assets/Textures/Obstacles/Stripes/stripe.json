@@ -1,0 +1,38 @@
+{ 
+    
+    "cyan": [
+        
+        {
+            "density": 2, "friction": 0, "bounce": 0, 
+            "filter": { "categoryBits": 1, "maskBits": 65535 },
+            "shape": [   240, 35  ,  80, 35  ,  80, 0  ,  240, 0  ]
+        }
+    ]
+    , 
+    "pink": [
+        
+        {
+            "density": 2, "friction": 0, "bounce": 0, 
+            "filter": { "categoryBits": 1, "maskBits": 65535 },
+            "shape": [   240, 35  ,  80, 35  ,  80, 0  ,  240, 0  ]
+        }
+    ]
+    , 
+    "purple": [
+        
+        {
+            "density": 2, "friction": 0, "bounce": 0, 
+            "filter": { "categoryBits": 1, "maskBits": 65535 },
+            "shape": [   240, 35  ,  80, 35  ,  80, 0  ,  240, 0  ]
+        }
+    ]
+    , 
+    "yellow": [
+        
+        {
+            "density": 2, "friction": 0, "bounce": 0, 
+            "filter": { "categoryBits": 1, "maskBits": 65535 },
+            "shape": [   240, 35  ,  80, 35  ,  80, 0  ,  240, 0  ]
+        }
+    ]
+}

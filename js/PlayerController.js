@@ -10,16 +10,16 @@ class PlayerController{
   }
 
   update() {
-      if (CSW.keyboard.isDown(this.configs.TAP)) {
-        if (this.elapsedTime>=0.3) {
-          this.elapsedTime = 0;
-          if (this.tapCount==0) CSW.game.physics.p2.gravity.y = 1000;
-          //this.configs.direction.y = this.sprite.body.velocity.y>=0?-this.configs.direction.y:this.configs.direction.y
-          //this.sprite.body.velocity = this.configs.direction.setMagnitude(this.configs.speed);
-          this.sprite.body.moveUp(this.configs.direction.y);
-          this.tapCount++;
-        }
+    if (CSW.keyboard.isDown(this.configs.TAP)) {
+      if (this.elapsedTime>=0.3) {
+        this.elapsedTime = 0;
+        if (this.tapCount==0) CSW.game.physics.p2.gravity.y = 1000;
+        //this.configs.direction.y = this.sprite.body.velocity.y>=0?-this.configs.direction.y:this.configs.direction.y
+        //this.sprite.body.velocity = this.configs.direction.setMagnitude(this.configs.speed);
+        this.sprite.body.moveUp(this.configs.direction.y);
+        this.tapCount++;
       }
+    }
     this.elapsedTime += CSW.game.time.physicsElapsed;
   } 
 }

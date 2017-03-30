@@ -1,16 +1,16 @@
 class CircleController{
   constructor(position) {
-    var circleParts = [];
+    var parts = [];
     CircleController.colors.forEach(function(color) {
       let sprite = new ObstacleController("circle_"+color,color,CircleController.configs,CircleController.configs.offsetAngle,position);
-      circleParts.push(sprite.sprite);
+      parts.push(sprite.sprite);
     });
 
-    this.circleParts = circleParts;
+    this.parts = parts;
   }
 
   update() {
-    this.circleParts.forEach(function(part) {
+    this.parts.forEach(function(part) {
       part.body.clearShapes();
       if (part.color!=CSW.player.sprite.color) part.body.loadPolygon('circle_physics', part.color);
     });

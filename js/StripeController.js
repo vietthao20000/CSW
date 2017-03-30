@@ -1,19 +1,33 @@
 class StripeController{
   constructor(position) {
+    var parts = [];
+
     StripeController.colors.forEach(function(color) {
-      new ObstacleController(color.color,StripeController.configs,color.offsetAngle,position);
+      let sprite = new ObstacleController("stripe_"+color.color,color.color,StripeController.configs,color.offsetAngle,position);
+      parts.push(sprite.sprite);
+    });
+
+    this.parts = parts;
+  }
+
+  update() {
+    this.parts.forEach(function(part) {
+      part.body.clearShapes();
+      if (part.color!=CSW.player.sprite.color) {
+        part.body.loadPolygon('stripe_physics', part.color);
+      }
     });
   }
 }
 
 StripeController.configs= {
-  anchor:{x:0,y:0.5},
+  anchor:{x: 0,y:0.5},
   ratio:0.9
 }
 
 StripeController.colors= [
-  {color: "stripe_cyan", offsetAngle: 0},
-  {color: "stripe_pink", offsetAngle: 90},
-  {color: "stripe_purple", offsetAngle: 180},
-  {color: "stripe_yellow", offsetAngle: 270}
+  {color: "cyan", offsetAngle: 0},
+  {color: "pink", offsetAngle: 90},
+  {color: "purple", offsetAngle: 180},
+  {color: "yellow", offsetAngle: 270}
 ];
