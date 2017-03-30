@@ -8,6 +8,7 @@ class PlayerController{
     this.sprite.tint = 0xfe0180;
     this.yOrig = this.sprite.y;
     this.yChange = 0;
+    this.sprite.body.collideWorldBounds = true;
   }
 
   update() {
