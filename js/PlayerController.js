@@ -6,6 +6,9 @@ class PlayerController{
     this.elapsedTime = 1;
     this.tapCount = 0;
     this.sprite.tint = 0xfe0180;
+    this.yOrig = this.sprite.y;
+    this.yChange = 0;
+    this.sprite.body.collideWorldBounds = true;
   }
 
   update() {
@@ -19,5 +22,8 @@ class PlayerController{
         }
       }
     this.elapsedTime += CSW.game.time.physicsElapsed;
-  } 
+
+    //Update the yChange
+    this.yChange = Math.max(this.yChange, this.yOrig - this.sprite.y);
+  }
 }

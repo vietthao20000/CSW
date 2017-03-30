@@ -7,4 +7,12 @@ class ObstacleController{
 		this.sprite.scale.setTo(this.configs.ratio,this.configs.ratio);
 		this.sprite.angle = angle;
 	}
+
+	update(){
+		console.log(this.sprite.position.y);
+		if(this.sprite.position.y > CSW.game.camera.y + 960){
+			this.sprite.kill;
+			console.log("kill");
+		}
+	}
 }
