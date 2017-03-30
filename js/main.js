@@ -22,13 +22,13 @@ var preload = function(){
 
   CSW.game.time.advancedTiming = true;
 
-  //CSW.game.load.atlasJSONHash('assets', 'Assets/assets.png', 'Assets/assets.json');
   //CSW.game.load.image('background', 'Assets/Map1.png');
+  CSW.game.load.atlasJSONHash('assets', 'Assets/Textures/buttons.png', 'Assets/Textures/buttons.json');
   CSW.game.load.image('player','Assets/Textures/Player/Player.png');
-  CSW.game.load.image('circle_cyan','Assets/Textures/Obstacles/Circle/Circle_cyan.png');
-  CSW.game.load.image('circle_pink','Assets/Textures/Obstacles/Circle/Circle_pink.png');
-  CSW.game.load.image('circle_purple','Assets/Textures/Obstacles/Circle/Circle_purple.png');
-  CSW.game.load.image('circle_yellow','Assets/Textures/Obstacles/Circle/Circle_yellow.png');
+  CSW.game.load.image('circle_cyan','Assets/Textures/Obstacles/Circle/cyan.png');
+  CSW.game.load.image('circle_pink','Assets/Textures/Obstacles/Circle/pink.png');
+  CSW.game.load.image('circle_purple','Assets/Textures/Obstacles/Circle/purple.png');
+  CSW.game.load.image('circle_yellow','Assets/Textures/Obstacles/Circle/yellow.png');
   CSW.game.load.image('stripe_cyan','Assets/Textures/Obstacles/Stripes/cyan.png');
   CSW.game.load.image('stripe_pink','Assets/Textures/Obstacles/Stripes/pink.png');
   CSW.game.load.image('stripe_purple','Assets/Textures/Obstacles/Stripes/purple.png');
