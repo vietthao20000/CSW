@@ -12,4 +12,12 @@ class ObstacleController{
 		this.sprite.body.data.gravityScale = 0;
 		this.sprite.body.kinematic = true;
 	}
+
+	update(){
+		console.log(this.sprite.position.y);
+		if(this.sprite.position.y > CSW.game.camera.y + 960){
+			this.sprite.kill;
+			console.log("kill");
+		}
+	}
 }
