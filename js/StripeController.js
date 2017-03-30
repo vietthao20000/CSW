@@ -11,6 +11,7 @@ class StripeController{
   }
 
   update() {
+    super.update;
     this.parts.forEach(function(part) {
       part.body.clearShapes();
       if (part.color!=CSW.player.sprite.color) {

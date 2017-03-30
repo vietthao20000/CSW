@@ -15,7 +15,7 @@ class ObstacleController{
 
 	update(){
 		console.log(this.sprite.position.y);
-		if(this.sprite.position.y > CSW.game.camera.y + 960){
+		if(this.sprite.position.y > CSW.game.camera.y + CSW.configs.GAME_HEIGHT){
 			this.sprite.kill;
 			console.log("kill");
 		}

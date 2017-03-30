@@ -46,15 +46,12 @@ var preload = function(){
 
 // initialize the game
 var create = function(){
-  CSW.game.world.setBounds(0, 0, 640, 950);
+  CSW.game.world.setBounds(0, 0, CSW.configs.GAME_WIDTH, CSW.configs.GAME_HEIGHT);
   CSW.game.physics.startSystem(Phaser.Physics.P2JS);
-  //CSW.game.physics.p2.restitution = 0.9;
 
   CSW.keyboard = CSW.game.input.keyboard;
   CSW.playerGroup = CSW.game.add.physicsGroup();
   CSW.obstacleGroup = CSW.game.add.physicsGroup();
-  // CSW.obstaclePool = CSW.game.add.group();
-  // CSW.obstaclePool.createMultiple(10);
   CSW.obstacleGroup.getFirstDead();
 
 
@@ -72,53 +69,50 @@ var create = function(){
 
   CSW.pool.push(new CircleController({x: 320, y: 100}));
   CSW.pool.push(new StripeController({x: 400, y: 400}));
-  
+
   CSW.pool.forEach(function(obstacle) {
     obstacle.update();
   });
 
-  //console.log(CSW.player.sprite.body.debug);
   CSW.player.sprite.body.onBeginContact.add(blockHit, this);
 
-  CSW.circle = new CircleController({x: 150, y: 200});
-  CSW.Stripe = new StripeController({x: 450, y: 200});
+
   CSW.game.physics.p2.enable(CSW.player,CSW.circle, CSW.Stripe);
 
   CSW.game.camera.follow(CSW.player.sprite);
-  CSW.game.camera.deadzone = new Phaser.Rectangle(0, 480, 640, 480);
+  CSW.game.camera.deadzone = new Phaser.Rectangle(0, CSW.configs.GAME_HEIGHT/2, CSW.configs.GAME_WIDTH, CSW.configs.GAME_HEIGHT/2);
 }
 
 // update game state each frame
 var update = function(){
   CSW.player.update();
-  //CSW.circle.update();
-  //CSW.stripe.update();
-  CSW.game.world.setBounds(0, -CSW.player.yChange, 640, 960);
+  CSW.game.world.setBounds(0, -CSW.player.yChange, CSW.configs.GAME_WIDTH, CSW.configs.GAME_HEIGHT);
   CSW.obstacleGroup.forEach(function(obs){
     if(obs.position.y > CSW.game.camera.y + CSW.configs.GAME_HEIGHT) {
       obs.kill();
       console.log(kill);
     };
   });
-  // console.log(CSW.game.camera.y);
   var obs = CSW.obstacleGroup.getFirstDead();
   console.log(obs);
 }
 
 // before camera render (mostly for debug)
-var render = function(){var blockHit = function (body, bodyB, shapeA, shapeB, equation) {
+var render = function(){}
+
+var blockHit = function (body, bodyB, shapeA, shapeB, equation) {
   //  The block hit something.
-  //  
+  //
   //  This callback is sent 5 arguments:
-  //  
+  //
   //  The Phaser.Physics.P2.Body it is in contact with. *This might be null* if the Body was created directly in the p2 world.
   //  The p2.Body this Body is in contact with.
   //  The Shape from this body that caused the contact.
   //  The Shape from the contact body.
   //  The Contact Equation data array.
-  //  
+  //
   //  The first argument may be null or not have a sprite property, such as when you hit the world bounds.
-  if (body) { 
+  if (body) {
     if (body.sprite.key==='switch') {
       body.sprite.kill(); // Recycle object here
       CSW.player.sprite.tint = CSW.configs.COLORS[body.sprite.color];
@@ -131,13 +125,14 @@ var render = function(){var blockHit = function (body, bodyB, shapeA, shapeB, eq
       lose();
     }
     result = 'You last hit: ' + body.sprite.key;
-  } 
+  }
   else {
     result = 'You last hit: The wall :)';
     lose();
   }
   //console.log(result);
 }
+
 
 var lose = function() {
   console.log("You lose");

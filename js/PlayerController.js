@@ -9,7 +9,6 @@ class PlayerController{
     this.sprite.color = color;
     this.yOrig = this.sprite.y;
     this.yChange = 0;
-    this.sprite.body.collideWorldBounds = true;
   }
 
   update() {
