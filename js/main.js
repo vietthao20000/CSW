@@ -39,6 +39,7 @@ var preload = function(){
   CSW.game.load.image('stripe_pink','Assets/Textures/Obstacles/Stripes/pink.png');
   CSW.game.load.image('stripe_purple','Assets/Textures/Obstacles/Stripes/purple.png');
   CSW.game.load.image('stripe_yellow','Assets/Textures/Obstacles/Stripes/yellow.png');
+  CSW.game.load.image('switch','Assets/Textures/Obstacles/switch.png');
   CSW.game.load.physics('circle_physics','Assets/Textures/Obstacles/Circle/circle.json');
   CSW.game.load.physics('stripe_physics','Assets/Textures/Obstacles/Stripes/stripe.json');
 }
@@ -46,7 +47,7 @@ var preload = function(){
 // initialize the game
 var create = function(){
   CSW.game.physics.startSystem(Phaser.Physics.P2JS);
-  CSW.game.physics.p2.restitution = 0.9;
+  //CSW.game.physics.p2.restitution = 0.9;
 
   CSW.keyboard = CSW.game.input.keyboard;
   CSW.playerGroup = CSW.game.add.physicsGroup();
@@ -57,22 +58,29 @@ var create = function(){
     speed: 1.4,
     direction: new Phaser.Point(0,600)
   },"purple");
-
   CSW.game.physics.p2.enable([CSW.player.sprite],false);
 
-  CSW.circle = new CircleController({x: 320, y: 100});
+  CSW.pool = [];
 
-  CSW.stripe = new StripeController({x: 400, y: 400});
+  CSW.switch = new SwitchController("yellow",{x: 320, y: 100});
+
+  CSW.pool.push(new CircleController({x: 320, y: 100}));
+  CSW.pool.push(new StripeController({x: 400, y: 400}));
+  
+  CSW.pool.forEach(function(obstacle) {
+    obstacle.update();
+  });
+
 
   //console.log(CSW.player.sprite.body.debug);
-  //CSW.player.sprite.body.onBeginContact.add(blockHit, this);
+  CSW.player.sprite.body.onBeginContact.add(blockHit, this);
 }
 
 // update game state each frame
 var update = function(){
   CSW.player.update();
-  CSW.circle.update();
-  CSW.stripe.update();
+  //CSW.circle.update();
+  //CSW.stripe.update();
 }
 
 // before camera render (mostly for debug)
@@ -90,13 +98,27 @@ var blockHit = function (body, bodyB, shapeA, shapeB, equation) {
   //  The Contact Equation data array.
   //  
   //  The first argument may be null or not have a sprite property, such as when you hit the world bounds.
-  if (body)
-  {
-      result = 'You last hit: ' + body.sprite.key;
+  if (body) { 
+    if (body.sprite.key==='switch') {
+      body.sprite.kill(); // Recycle object here
+      CSW.player.sprite.tint = CSW.configs.COLORS[body.sprite.color];
+      CSW.player.sprite.color = body.sprite.color;
+      CSW.pool.forEach(function(obstacle) {
+        obstacle.update();
+      });
+    }
+    else {
+      lose();
+    }
+    result = 'You last hit: ' + body.sprite.key;
+  } 
+  else {
+    result = 'You last hit: The wall :)';
+    lose();
   }
-  else
-  {
-      result = 'You last hit: The wall :)';
-  }
-  alert(result);
+  //console.log(result);
+}
+
+var lose = function() {
+  console.log("You lose");
 }
