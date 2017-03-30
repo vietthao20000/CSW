@@ -2,14 +2,17 @@ class CircleController{
   constructor(position) {
     var circleParts = [];
     CircleController.colors.forEach(function(color) {
-      let sprite = new ObstacleController(color,color.split("_")[1],CircleController.configs,CircleController.configs.offsetAngle,position);
+      let sprite = new ObstacleController("circle_"+color,color,CircleController.configs,CircleController.configs.offsetAngle,position);
       circleParts.push(sprite.sprite);
     });
 
-    circleParts.forEach(function(part) {
+    this.circleParts = circleParts;
+  }
+
+  update() {
+    this.circleParts.forEach(function(part) {
       part.body.clearShapes();
-      part.body.loadPolygon('circle_physics', part.spriteName);
-      console.log(part.spriteName);
+      if (part.color!=CSW.player.sprite.color) part.body.loadPolygon('circle_physics', part.color);
     });
   }
 }
@@ -20,4 +23,4 @@ CircleController.configs= {
   offsetAngle: 0
 }
 
-CircleController.colors= ["circle_cyan","circle_pink","circle_purple","circle_yellow"];
+CircleController.colors= ["cyan","pink","purple","yellow"];

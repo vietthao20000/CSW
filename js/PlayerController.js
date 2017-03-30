@@ -5,7 +5,8 @@ class PlayerController{
     this.configs = configs;
     this.elapsedTime = 1;
     this.tapCount = 0;
-    this.sprite.tint = 0xfe0180;
+    this.sprite.tint = CSW.configs.COLORS[color];
+    this.sprite.color = color;
   }
 
   update() {

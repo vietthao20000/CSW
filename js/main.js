@@ -2,12 +2,12 @@ var CSW = {};
 CSW.configs = {
   GAME_WIDTH: 640,
   GAME_HEIGHT:  960,
-  /*COLORS: {
-    "pink":0xfe0180,
-    "cyan":,
-    "purple":,
-    "yellow":,
-  }*/
+  COLORS: {
+    pink: "0xfe0180",
+    cyan: "0x36e1f3",
+    purple: "0x8d13fe",
+    yellow: "0xf5df10",
+  }
 };
 
 window.onload = function(){
@@ -55,7 +55,7 @@ var create = function(){
     TAP:Phaser.Keyboard.SPACEBAR,
     speed: 650,
     direction: new Phaser.Point(0,600)
-  },"pink");
+  },"purple");
 
   CSW.game.physics.p2.enable([CSW.player.sprite],true);
 
@@ -64,12 +64,13 @@ var create = function(){
   //CSW.stripe = new StripeController({x: 450, y: 200});
 
   //console.log(CSW.player.sprite.body.debug);
-  CSW.player.sprite.body.onBeginContact.add(blockHit, this);
+  //CSW.player.sprite.body.onBeginContact.add(blockHit, this);
 }
 
 // update game state each frame
 var update = function(){
   CSW.player.update();
+  CSW.circle.update();
   //CSW.game.physics.arcade.overlap(CSW.playerGroup,CSW.obstacleGroup, onTouch);
 }
 
