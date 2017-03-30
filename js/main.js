@@ -54,15 +54,15 @@ var create = function(){
 
   CSW.player = new PlayerController({
     TAP:Phaser.Keyboard.SPACEBAR,
-    speed: 650,
+    speed: 1.4,
     direction: new Phaser.Point(0,600)
   },"purple");
 
   CSW.game.physics.p2.enable([CSW.player.sprite],false);
 
-  CSW.circle = new CircleController({x: 250, y: 200});
+  CSW.circle = new CircleController({x: 320, y: 100});
 
-  CSW.stripe = new StripeController({x: 450, y: 200});
+  CSW.stripe = new StripeController({x: 400, y: 400});
 
   //console.log(CSW.player.sprite.body.debug);
   //CSW.player.sprite.body.onBeginContact.add(blockHit, this);
@@ -73,7 +73,6 @@ var update = function(){
   CSW.player.update();
   CSW.circle.update();
   CSW.stripe.update();
-  //CSW.game.physics.arcade.overlap(CSW.playerGroup,CSW.obstacleGroup, onTouch);
 }
 
 // before camera render (mostly for debug)

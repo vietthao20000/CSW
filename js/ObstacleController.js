@@ -7,7 +7,7 @@ class ObstacleController{
 		this.sprite.body.angle = angle;
 		this.sprite.color = color;
 		this.sprite.anchor = new Phaser.Point(this.configs.anchor.x,this.configs.anchor.y);
-		this.sprite.body.angularVelocity = 3;
+		this.sprite.body.angularVelocity = 2.5;
 		this.sprite.body.angularDamping = 0;
 		this.sprite.body.data.gravityScale = 0;
 		this.sprite.body.kinematic = true;
