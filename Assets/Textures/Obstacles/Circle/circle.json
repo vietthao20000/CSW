@@ -1,6 +1,6 @@
 { 
     
-    "Circle_cyan": [
+    "cyan": [
         
         {
             "density": 2, "friction": 0, "bounce": 0, 
@@ -39,7 +39,7 @@
         }
     ]
     , 
-    "Circle_pink": [
+    "pink": [
         
         {
             "density": 2, "friction": 0, "bounce": 0, 
@@ -78,7 +78,7 @@
         }
     ]
     , 
-    "Circle_purple": [
+    "purple": [
         
         {
             "density": 2, "friction": 0, "bounce": 0, 
@@ -117,7 +117,7 @@
         }
     ]
     , 
-    "Circle_yellow": [
+    "yellow": [
         
         {
             "density": 2, "friction": 0, "bounce": 0, 

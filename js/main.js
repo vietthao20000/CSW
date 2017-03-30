@@ -2,6 +2,12 @@ var CSW = {};
 CSW.configs = {
   GAME_WIDTH: 640,
   GAME_HEIGHT:  960,
+  /*COLORS: {
+    "pink":0xfe0180,
+    "cyan":,
+    "purple":,
+    "yellow":,
+  }*/
 };
 
 window.onload = function(){
@@ -45,11 +51,12 @@ var create = function(){
   CSW.playerGroup = CSW.game.add.physicsGroup();
   CSW.obstacleGroup = CSW.game.add.physicsGroup();
 
-  CSW.player = new PlayerController("player",{
+  CSW.player = new PlayerController({
     TAP:Phaser.Keyboard.SPACEBAR,
     speed: 650,
     direction: new Phaser.Point(0,600)
-  });
+  },"pink");
+
   CSW.game.physics.p2.enable([CSW.player.sprite],true);
 
   CSW.circle = new CircleController({x: 250, y: 200});
