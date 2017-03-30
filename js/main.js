@@ -87,14 +87,13 @@ var create = function(){
 var update = function(){
   CSW.player.update();
   CSW.game.world.setBounds(0, -CSW.player.yChange, CSW.configs.GAME_WIDTH, CSW.configs.GAME_HEIGHT);
-  // CSW.obstacleGroup.forEach(function(obs){
-  //   if(obs.position.y > CSW.game.camera.y + CSW.configs.GAME_HEIGHT) {
-  //     obs.kill();
-  //     console.log(kill);
-  //   };
-  // });
-  // var obs = CSW.obstacleGroup.getFirstDead();
-  // console.log(obs);
+  CSW.pool.forEach(function(obs){
+    if(obs.position.y > CSW.game.camera.y + CSW.configs.GAME_HEIGHT) {
+      obs.parts.forEach( function(part, index) {
+        part.kill();
+      });
+    };
+  });
 }
 
 // before camera render (mostly for debug)

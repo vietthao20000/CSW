@@ -1,12 +1,14 @@
 class CircleController{
   constructor(position) {
     var parts = [];
+    
     CircleController.colors.forEach(function(color) {
       let sprite = new ObstacleController("circle_"+color,color,CircleController.configs,CircleController.configs.offsetAngle,position);
       parts.push(sprite.sprite);
     });
 
     this.parts = parts;
+    this.position = position;
   }
 
   update() {

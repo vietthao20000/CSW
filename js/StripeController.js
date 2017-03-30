@@ -8,10 +8,10 @@ class StripeController{
     });
 
     this.parts = parts;
+    this.position = position;
   }
 
   update() {
-    super.update;
     this.parts.forEach(function(part) {
       part.body.clearShapes();
       if (part.color!=CSW.player.sprite.color) {
