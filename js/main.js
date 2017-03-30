@@ -51,8 +51,8 @@ var create = function(){
 
   CSW.keyboard = CSW.game.input.keyboard;
   CSW.playerGroup = CSW.game.add.physicsGroup();
-  CSW.obstacleGroup = CSW.game.add.physicsGroup();
-  CSW.obstacleGroup.getFirstDead();
+  // CSW.obstacleGroup = CSW.game.add.physicsGroup();
+  // CSW.obstacleGroup.getFirstDead();
 
 
 
@@ -87,14 +87,14 @@ var create = function(){
 var update = function(){
   CSW.player.update();
   CSW.game.world.setBounds(0, -CSW.player.yChange, CSW.configs.GAME_WIDTH, CSW.configs.GAME_HEIGHT);
-  CSW.obstacleGroup.forEach(function(obs){
-    if(obs.position.y > CSW.game.camera.y + CSW.configs.GAME_HEIGHT) {
-      obs.kill();
-      console.log(kill);
-    };
-  });
-  var obs = CSW.obstacleGroup.getFirstDead();
-  console.log(obs);
+  // CSW.obstacleGroup.forEach(function(obs){
+  //   if(obs.position.y > CSW.game.camera.y + CSW.configs.GAME_HEIGHT) {
+  //     obs.kill();
+  //     console.log(kill);
+  //   };
+  // });
+  // var obs = CSW.obstacleGroup.getFirstDead();
+  // console.log(obs);
 }
 
 // before camera render (mostly for debug)
