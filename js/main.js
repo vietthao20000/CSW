@@ -65,9 +65,9 @@ var create = function(){
 
   CSW.pool = [];
 
-  CSW.switch = new SwitchController("yellow",{x: 320, y: 100});
+  CSW.switch = new SwitchController("yellow",{x: 320, y: 0});
 
-  CSW.pool.push(new CircleController({x: 320, y: 100}));
+  CSW.pool.push(new CircleController({x: 320, y: 0}));
   CSW.pool.push(new StripeController({x: 400, y: 400}));
 
   CSW.pool.forEach(function(obstacle) {
@@ -87,6 +87,7 @@ var create = function(){
 var update = function(){
   CSW.player.update();
   CSW.game.world.setBounds(0, -CSW.player.yChange, CSW.configs.GAME_WIDTH, CSW.configs.GAME_HEIGHT);
+  // CSW.game.camera.y = -CSW.player.yChange + CSW.configs.GAME_HEIGHT;
   CSW.pool.forEach(function(obs){
     if(obs.position.y > CSW.game.camera.y + CSW.configs.GAME_HEIGHT) {
       obs.parts.forEach( function(part, index) {
@@ -94,6 +95,7 @@ var update = function(){
       });
     };
   });
+  CSW.game.camera.setBoundsToWorld();
 }
 
 // before camera render (mostly for debug)

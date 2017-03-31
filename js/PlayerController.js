@@ -7,7 +7,7 @@ class PlayerController{
     this.tapCount = 0;
     this.sprite.tint = CSW.configs.COLORS[color];
     this.sprite.color = color;
-    this.yOrig = this.sprite.y;
+    this.yOrig = CSW.configs.GAME_HEIGHT/2;
     this.yChange = 0;
   }
 
