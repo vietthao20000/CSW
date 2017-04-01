@@ -63,12 +63,27 @@ var create = function(){
   },"purple");
   CSW.game.physics.p2.enable([CSW.player.sprite],false);
 
+  //Object trong pool có index càng lớn thì độ khó của nó càng lớn
   CSW.pool = [];
 
   CSW.switch = new SwitchController("yellow",{x: 320, y: 0});
-
   CSW.pool.push(new CircleController({x: 320, y: 0}));
   CSW.pool.push(new StripeController({x: 400, y: 400}));
+  CSW.pool.push(new StripeController({x: 400, y: 400}));
+  CSW.pool.push(new CircleController({x: 320, y: 0}));
+  //lever quyết định cách thức lấy object từ pool, lever càng cao xác suất lấy object có index cao càng lớn
+  //lever tăng khi ăn switch
+  //lever max là CSW.pool.length
+  CSW.lever = 3;
+
+  //Để chắc chắn rằng ban đầu chỉ có 2 Object trong pool được dùng
+  for (let i = 2; i < CSW.pool.length; i++) {
+    CSW.pool[i].parts.forEach(function(part){
+      part.kill();
+    });
+    CSW.pool[i].used = false;
+    CSW.pool[i].position.y = -99999;
+  }
 
   CSW.pool.forEach(function(obstacle) {
     obstacle.update();
@@ -81,21 +96,54 @@ var create = function(){
 
   CSW.game.camera.follow(CSW.player.sprite);
   CSW.game.camera.deadzone = new Phaser.Rectangle(0, CSW.configs.GAME_HEIGHT/2, CSW.configs.GAME_WIDTH, CSW.configs.GAME_HEIGHT/2);
+
+  console.log("Lever hiện tại: "+ CSW.lever);
 }
 
 // update game state each frame
 var update = function(){
   CSW.player.update();
   CSW.game.world.setBounds(0, -CSW.player.yChange, CSW.configs.GAME_WIDTH, CSW.configs.GAME_HEIGHT);
-  // CSW.game.camera.y = -CSW.player.yChange + CSW.configs.GAME_HEIGHT;
+
+  //Object trôi ra khỏi camera thì kill
+  //Ngay sau khi kill sẽ khởi tạo lại object mới
   CSW.pool.forEach(function(obs){
     if(obs.position.y > CSW.game.camera.y + CSW.configs.GAME_HEIGHT) {
       obs.parts.forEach( function(part, index) {
         part.kill();
       });
+      obs.used = false;
+      obs.position.y = -99999;
+      reUseOne();
     };
   });
-  CSW.game.camera.setBoundsToWorld();
+}
+
+//Lấy random 1 object trong pool ra, nếu object đó đang được dùng thì lấy
+// object đầu tiên chưa được dùng từ CSW.pool[lever - 1]
+var reUseOne = function(){
+  var rd = Math.floor((Math.random() * CSW.lever));
+  if(CSW.pool[rd].used == false) {
+    CSW.pool[rd].parts.forEach(function(part){
+      part.reset(part.position.x, -CSW.player.yChange);
+      part.body.angularVelocity = 2.5;
+    });
+    CSW.pool[rd].used = true;
+    CSW.pool[rd].position.y = -CSW.player.yChange;
+  }
+  else {
+    for (let i = CSW.lever - 1; i >= 0; i--) {
+      if(CSW.pool[i].used == false) {
+        CSW.pool[i].parts.forEach(function(part){
+          part.reset(part.position.x, -CSW.player.yChange);
+          part.body.angularVelocity = 2.5;
+        });
+        CSW.pool[i].used = true;
+        CSW.pool[i].position.y = -CSW.player.yChange;
+        break;
+      }
+    }
+  }
 }
 
 // before camera render (mostly for debug)
@@ -115,6 +163,10 @@ var blockHit = function (body, bodyB, shapeA, shapeB, equation) {
   //  The first argument may be null or not have a sprite property, such as when you hit the world bounds.
   if (body) {
     if (body.sprite.key==='switch') {
+      if(CSW.lever < CSW.pool.length){
+        CSW.lever ++;
+        console.log("lever hiện tại: "+CSW.lever);
+      }
       body.sprite.kill(); // Recycle object here
       CSW.player.sprite.tint = CSW.configs.COLORS[body.sprite.color];
       CSW.player.sprite.color = body.sprite.color;

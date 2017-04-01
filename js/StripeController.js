@@ -9,6 +9,7 @@ class StripeController{
 
     this.parts = parts;
     this.position = position;
+    this.used = true;
   }
 
   update() {
