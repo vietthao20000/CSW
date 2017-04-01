@@ -53,6 +53,9 @@ var gameOver={
   },
 
   actionOnClick_replay : function(){
+    CSW.click = CSW.add.audio('click');
+    CSW.click.volume = 1;
+    CSW.click.play();
     CSW.state.start('play');
   },
 
