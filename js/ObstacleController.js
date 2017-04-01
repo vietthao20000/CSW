@@ -5,7 +5,7 @@ class ObstacleController{
 		//this.sprite.scale.setTo(this.configs.ratio,this.configs.ratio);
 		CSW.physics.p2.enable([this.sprite],false);
 		this.sprite.body.angle = angle;
-		this.sprite.color = color;
+		//if (color) this.sprite.color = color;
 		this.sprite.anchor = new Phaser.Point(this.configs.anchor.x,this.configs.anchor.y);
 		this.sprite.body.angularVelocity = 2.5;
 		this.sprite.body.angularDamping = 0;
@@ -14,10 +14,8 @@ class ObstacleController{
 	}
 
 	update(){
-		console.log(this.sprite.position.y);
 		if(this.sprite.position.y > CSW.camera.y + CSW.configs.GAME_HEIGHT){
 			this.sprite.kill;
-			console.log("kill");
 		}
 	}
 }

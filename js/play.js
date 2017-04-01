@@ -35,6 +35,7 @@ var playState={
   CSW.load.image('switch','Assets/Textures/Obstacles/switch.png');
   CSW.load.physics('circle_physics','Assets/Textures/Obstacles/Circle/circle.json');
   CSW.load.physics('stripe_physics','Assets/Textures/Obstacles/Stripes/stripe.json');
+  //CSW.load.physics('star','Assets/Textures/Obstacles/Star/Star.png');
 
   // CSW.scale.pageAlignHorizontally = true;
   // CSW.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
