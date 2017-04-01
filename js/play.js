@@ -33,9 +33,9 @@ var playState={
   CSW.load.image('stripe_purple','Assets/Textures/Obstacles/Stripes/purple.png');
   CSW.load.image('stripe_yellow','Assets/Textures/Obstacles/Stripes/yellow.png');
   CSW.load.image('switch','Assets/Textures/Obstacles/switch.png');
+  CSW.load.image('star','Assets/Textures/Obstacles/Star/Star.png');
   CSW.load.physics('circle_physics','Assets/Textures/Obstacles/Circle/circle.json');
   CSW.load.physics('stripe_physics','Assets/Textures/Obstacles/Stripes/stripe.json');
-  //CSW.load.physics('star','Assets/Textures/Obstacles/Star/Star.png');
 
   // CSW.scale.pageAlignHorizontally = true;
   // CSW.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
@@ -68,6 +68,7 @@ var playState={
   CSW.pool.push(new StripeController({x: 400, y: 400}));
   CSW.pool.push(new StripeController({x: 400, y: 400}));
   CSW.pool.push(new CircleController({x: 320, y: 0}));
+  CSW.star = new StarController({x: 320, y: -200});
   //lever quyết định cách thức lấy object từ pool, lever càng cao xác suất lấy object có index cao càng lớn
   //lever tăng khi ăn switch
   //lever max là CSW.pool.length
@@ -161,11 +162,14 @@ var playState={
   //
   //  The first argument may be null or not have a sprite property, such as when you hit the world bounds.
   if (body) {
-    if (body.sprite.key==='switch') {
+    if (body.sprite.key==='star') {
       if(CSW.lever < CSW.pool.length){
         CSW.lever ++;
         console.log("lever hiện tại: "+CSW.lever);
       }
+      body.sprite.kill(); // Recycle object here
+    }
+    else if (body.sprite.key==='switch') {
       body.sprite.kill(); // Recycle object here
       CSW.player.sprite.tint = CSW.configs.COLORS[body.sprite.color];
       CSW.player.sprite.color = body.sprite.color;
