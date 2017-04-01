@@ -24,7 +24,7 @@ var gameOver={
 
   create : function(){
 
-    CSW.add.sprite(100,100,'title');
+    CSW.add.sprite(100,60,'title');
 
     var style = { font: "42px Arial", fill: "#ffffff", wordWrap: true, wordWrapWidth: 250, align: "center", backgroundColor: "#000000" };
     text = CSW.add.text(CSW.configs.GAME_WIDTH/2- 80, 320, "SCORE", style);
@@ -35,8 +35,13 @@ var gameOver={
 
     //CSW.add.sprite(50, 50, 'assets','home.png');
     button_home = CSW.add.button(20, 20, 'button_home',this.actionOnClick_home, 1, 0, 2);
-    button_replay = CSW.add.button(CSW.configs.GAME_WIDTH/2- 80, 600, 'button_replay', this.actionOnClick_replay, this, 1, 0, 2);
-    button_like = CSW.add.button(CSW.configs.GAME_WIDTH/2- 30, 850, 'button_like', this.actionOnClick_like, this, 1, 0, 2);
+    button_replay = CSW.add.button(CSW.configs.GAME_WIDTH/2, 700, 'button_replay', this.actionOnClick_replay, this, 1, 0, 2);
+    button_replay.anchor.setTo(0.5, 0.5);
+    new SpinShapeController({x: button_replay.x, y: button_replay.y},1,0.85);
+    new SpinShapeController({x: button_replay.x, y: button_replay.y},-1,1.08);
+    // new SpinShapeController({x: button_replay.x, y: button_replay.y},1,1.39);
+    button_like = CSW.add.button(CSW.configs.GAME_WIDTH/2, 900, 'button_like', this.actionOnClick_like, this, 1, 0, 2);
+    button_like.anchor.setTo(0.5, 0.5);
 
     // CSW.add.sprite(100, CSW.configs.GAME_HEIGHT- 80, 'assets','top.png');
     // CSW.add.sprite(CSW.configs.GAME_WIDTH-420, CSW.configs.GAME_HEIGHT- 80, 'assets','scoreboard1.png');
