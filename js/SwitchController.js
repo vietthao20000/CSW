@@ -3,10 +3,12 @@ class SwitchController{
 		var color = SwitchController.random(CSW.player.sprite.color);
     this.sprite = new ObstacleController("switch",color,SwitchController.configs,SwitchController.configs.offsetAngle,position);
 		this.sprite.sprite.body.angularVelocity = 0;
+		this.sprite.sprite.body.damping = 0;
+		this.sprite.sprite.color = SwitchController.random(CSW.player.sprite.color);
 	}
 
 	update() {
-		this.sprite.sprite.color = SwitchController.random(CSW.player.sprite.color);
+		this.sprite.sprite.body.mass = 0.001;
 	}
 }
 

@@ -12,6 +12,8 @@ class PlayerController{
     this.sprite.inputEnabled = true;
     this.sprite.input.enableDrag();
     this.sprite.input.allowVerticalDrag = false;
+    CSW.physics.p2.enable([this.sprite],false);
+    this.sprite.body.damping = 0;
   }
 
   update() {
@@ -26,11 +28,9 @@ class PlayerController{
       }
     }
     this.elapsedTime += CSW.time.physicsElapsed;
-
+    this.sprite.body.mass = 0.001;
     //Update the yChange
     this.yChange = Math.max(this.yChange, this.yOrig - this.sprite.y);
-    this.sprite.inputEnabled = true;
-    this.sprite.input.enableDrag();
-    this.sprite.input.allowVerticalDrag = false;
+    CSW.player.sprite.body.velocity.x = 0;
   }
 }
