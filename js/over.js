@@ -15,6 +15,11 @@ var gameOver={
 
 
     CSW.load.atlasJSONHash('assets', 'Assets/Textures/buttons.png', 'Assets/Textures/buttons.json');
+
+    var textStyleScore = { font: "50px Arial", fill: "#ffffff", align: "center" };
+    var textScore = CSW.add.text(300, 370, CSW.currScore, textStyleScore);
+    var textStyleHightScore = { font: "50px Arial", fill: "#ffffff", align: "center" };
+    var textHightScore = CSW.add.text(300, 480, CSW.hightScore, textStyleHightScore);
   },
 
   create : function(){
