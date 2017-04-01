@@ -15,9 +15,9 @@ var playState={
 
 // preparations before game starts
  preload : function(){
-  CSW.scale.pageAlignVertical = true;
+  CSW.scale.pageAlignVertically = true;
   CSW.scale.pageAlignHorizontally = true;
-  CSW.scale.scaleMode = Phaser.ScaleManager.compatibility;
+  CSW.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
 
   CSW.time.advancedTiming = true;
 

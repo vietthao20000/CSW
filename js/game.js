@@ -1,4 +1,4 @@
-var CSW= new Phaser.Game(640,960,Phaser.AUTO,'gameDiv');
+var CSW = new Phaser.Game(640,960,Phaser.CANVAS,'');
 
 CSW.state.add('boot',bootState);
 CSW.state.add('load',loadState);
