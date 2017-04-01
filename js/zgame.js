@@ -18,6 +18,8 @@ CSW.configs = {
   }
 };
 
+CSW.currScore = 0;
+CSW.hightScore = 0;
 
 console.log("game.js");
 
