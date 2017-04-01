@@ -9,6 +9,7 @@ class CircleController{
 
     this.parts = parts;
     this.position = position;
+    this.used = true;
   }
 
   update() {
@@ -16,6 +17,10 @@ class CircleController{
       part.body.clearShapes();
       if (part.color!=CSW.player.sprite.color) part.body.loadPolygon('circle_physics', part.color);
     });
+  }
+
+  update2(){
+
   }
 }
 

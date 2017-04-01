@@ -9,6 +9,7 @@ class StripeController{
 
     this.parts = parts;
     this.position = position;
+    this.used = true;
   }
 
   update() {
@@ -18,6 +19,10 @@ class StripeController{
         part.body.loadPolygon('stripe_physics', part.color);
       }
     });
+  }
+
+  update2(){
+
   }
 }
 

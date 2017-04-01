@@ -67,11 +67,12 @@ var playState={
     CSW.pool = [];
     CSW.switch = new SwitchController({x: 320, y: CSW.configs.GAME_HEIGHT/4 });
 
-
+CSW.pool.push(new CircleMoveController({x: 320, y: 480}));
     CSW.pool.push(new CircleController({x: 320, y: 0}));
     CSW.pool.push(new StripeController({x: 400, y: 480}));
     CSW.pool.push(new StripeController({x: 400, y: 0}));
     CSW.pool.push(new CircleController({x: 320, y: 0}));
+
     CSW.star = new StarController({x: 320, y: -CSW.configs.GAME_HEIGHT/4});
     //lever quyết định cách thức lấy object từ pool, lever càng cao xác suất lấy object có index cao càng lớn
     //lever tăng khi ăn switch
@@ -110,6 +111,7 @@ var playState={
     //Object trôi ra khỏi camera thì kill
     //Ngay sau khi kill sẽ khởi tạo lại object mới
     CSW.pool.forEach(function(obs){
+      obs.update2();
       if(obs.position.y > CSW.camera.y + CSW.configs.GAME_HEIGHT) {
         obs.parts.forEach( function(part, index) {
           part.kill();
@@ -142,6 +144,7 @@ var playState={
    reUseOne : function(){
     var rd = Math.floor((Math.random() * CSW.lever));
     if(CSW.pool[rd].used == false) {
+      CSW.pool[rd].update();
       CSW.pool[rd].parts.forEach(function(part){
         part.reset(part.position.x, -CSW.player.yChange);
         part.body.angularVelocity = 2.5;
@@ -152,6 +155,7 @@ var playState={
     else {
       for (let i = CSW.lever - 1; i >= 0; i--) {
         if(CSW.pool[i].used == false) {
+          CSW.pool[i].update();
           CSW.pool[i].parts.forEach(function(part){
             part.reset(part.position.x, -CSW.player.yChange);
             part.body.angularVelocity = 2.5;
@@ -162,6 +166,7 @@ var playState={
         }
       }
     }
+    console.log(CSW.pool);
   },
 
   // before camera render (mostly for debug)
