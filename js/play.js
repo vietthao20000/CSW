@@ -14,6 +14,9 @@ var playState={
   // preparations before game starts
    preload : function(){
     CSW.currScore = 0;
+    CSW.textStyle = { font: "100px Arial", fill: "#ffffff", align: "center" };
+    CSW.text = CSW.add.text(10, 10, CSW.currScore, CSW.textStyle);
+    CSW.text.fixedToCamera = true;
     CSW.scale.pageAlignVertically = true;
     CSW.scale.pageAlignHorizontally = true;
     CSW.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
@@ -175,7 +178,6 @@ var playState={
       if (body.sprite.key==='switch') {
         if(CSW.lever < CSW.pool.length){
           CSW.lever ++;
-          console.log("lever hiện tại: "+CSW.lever);
         }
         body.sprite.kill(); // Recycle object here
         CSW.player.sprite.tint = CSW.configs.COLORS[body.sprite.color];
@@ -186,10 +188,13 @@ var playState={
       }
       else if (body.sprite.key==='star') {
         body.sprite.kill();
-        CSW.currScore += 1;
+        CSW.text.text = ++CSW.currScore;
+        text.fixedToCamera = true;
         if(CSW.currScore > CSW.hightScore){
           CSW.hightScore = CSW.currScore;
         }
+
+        console.log(this.text);
         console.log("Diem hie tai: "+CSW.currScore);
         console.log("Hight score: "+CSW.hightScore);
       }
