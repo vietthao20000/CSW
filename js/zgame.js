@@ -1,9 +1,10 @@
 var CSW = new Phaser.Game(640,960,Phaser.CANVAS,'');
 
 CSW.state.add('boot',bootState);
-CSW.state.add('load',loadState);
+//CSW.state.add('load',loadState);
 CSW.state.add('menu',menuState);
 CSW.state.add('play',playState);
+CSW.state.add('over',gameOver);
 //game.state.add('win',winState);
 
 CSW.configs = {
@@ -20,4 +21,4 @@ CSW.configs = {
 
 console.log("game.js");
 
-CSW.state.start('boot');
+CSW.state.start('over');
