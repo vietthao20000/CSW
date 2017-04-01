@@ -21,4 +21,4 @@ CSW.configs = {
 
 console.log("game.js");
 
-CSW.state.start('over');
+CSW.state.start('menu');
