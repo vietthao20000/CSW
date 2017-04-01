@@ -1,7 +1,21 @@
 class CircleController{
   constructor(position) {
+    var parts = [];
+
     CircleController.colors.forEach(function(color) {
-      new ObstacleController(color,CircleController.configs,CircleController.configs.offsetAngle,position);
+      let sprite = new ObstacleController("circle_"+color,color,CircleController.configs,CircleController.configs.offsetAngle,position);
+      parts.push(sprite.sprite);
+    });
+
+    this.parts = parts;
+    this.position = position;
+    this.used = true;
+  }
+
+  update() {
+    this.parts.forEach(function(part) {
+      part.body.clearShapes();
+      if (part.color!=CSW.player.sprite.color) part.body.loadPolygon('circle_physics', part.color);
     });
   }
 }
@@ -12,4 +26,4 @@ CircleController.configs= {
   offsetAngle: 0
 }
 
-CircleController.colors= ["circle_cyan","circle_pink","circle_purple","circle_yellow"];
+CircleController.colors= ["cyan","pink","purple","yellow"];
