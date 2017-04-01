@@ -23,13 +23,13 @@ class StripeMoveController{
   }
 
   update2(){
-    if(this.parts[0].position.x > CSW.configs.GAME_WIDTH*3/4){
+    if(this.parts[0].position.x > CSW.configs.GAME_WIDTH*7/8){
       this.parts.forEach(function(part) {
         part.body.velocity.x = -200;
         part.body.angularVelocity = 4;
       });
     }
-    if(this.parts[0].position.x < CSW.configs.GAME_WIDTH/4){
+    if(this.parts[0].position.x < CSW.configs.GAME_WIDTH/8){
       this.parts.forEach(function(part) {
         part.body.velocity.x = 200;
         part.body.angularVelocity = 4;
