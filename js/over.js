@@ -1,6 +1,6 @@
 var gameOver={
-
   preload : function(){
+    CSW.world.setBounds(0,0,CSW.width,CSW.height);
     CSW.scale.pageAlignVertically = true;
     CSW.scale.pageAlignHorizontally= true;
     CSW.scale.scaleMode= Phaser.ScaleManager.SHOW_ALL;
@@ -15,10 +15,10 @@ var gameOver={
 
   create : function(){
     var style = { font: "42px Arial", fill: "#ff0044", wordWrap: true, wordWrapWidth: 250, align: "center", backgroundColor: "#000000" };
-    text = CSW.add.text(CSW.configs.GAME_WIDTH/2- 80, 200, "SCORE", style);
+    CSW.add.text(CSW.configs.GAME_WIDTH/2, 200, CSW.score, style);
 
     var style = { font: "42px Arial", fill: "#ff0044", wordWrap: true, wordWrapWidth: 500, align: "center", backgroundColor: "#000000" };
-    text = CSW.add.text(CSW.configs.GAME_WIDTH/2- 130, 350, "BEST SCORE", style);
+    CSW.add.text(CSW.configs.GAME_WIDTH/2- 130, 350, "BEST SCORE", style);
 
 
     //CSW.add.sprite(50, 50, 'assets','home.png');
@@ -41,7 +41,6 @@ var gameOver={
 
   actionOnClick_home : function(){
     CSW.state.start('menu');
-
   }
 
 

@@ -29,5 +29,8 @@ class PlayerController{
 
     //Update the yChange
     this.yChange = Math.max(this.yChange, this.yOrig - this.sprite.y);
+    this.sprite.inputEnabled = true;
+    this.sprite.input.enableDrag();
+    this.sprite.input.allowVerticalDrag = false;
   }
 }
