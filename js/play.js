@@ -54,7 +54,7 @@ var playState={
 
   CSW.player = new PlayerController({
     TAP:Phaser.Keyboard.SPACEBAR,
-    speed: 1.4,
+    speed: 1.35,
     direction: new Phaser.Point(0,600)
   },"purple");
   CSW.physics.p2.enable([CSW.player.sprite],false);
@@ -186,7 +186,8 @@ var playState={
 
 
  lose : function() {
-  console.log("You lose");
+  alert("You lose");
+  //CSW.state.start('boot');
 }
 
 }

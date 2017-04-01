@@ -3,7 +3,6 @@ var bootState= {
     CSW.physics.startSystem(Phaser.Physics.ARCADE);
 
     console.log("boot.js");
-
     CSW.state.start('load');
   }
 }
