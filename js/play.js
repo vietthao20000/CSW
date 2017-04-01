@@ -67,11 +67,12 @@ var playState={
     CSW.pool = [];
     CSW.switch = new SwitchController({x: 320, y: CSW.configs.GAME_HEIGHT/4 });
 
-CSW.pool.push(new CircleMoveController({x: 320, y: 480}));
+CSW.pool.push(new StripeMoveController({x: 320, y: 480}));
     CSW.pool.push(new CircleController({x: 320, y: 0}));
     CSW.pool.push(new StripeController({x: 400, y: 480}));
     CSW.pool.push(new StripeController({x: 400, y: 0}));
     CSW.pool.push(new CircleController({x: 320, y: 0}));
+    CSW.pool.push(new CircleMoveController({x: 320, y: 480}));
 
     CSW.star = new StarController({x: 320, y: -CSW.configs.GAME_HEIGHT/4});
     //lever quyết định cách thức lấy object từ pool, lever càng cao xác suất lấy object có index cao càng lớn
@@ -210,6 +211,9 @@ CSW.pool.push(new CircleMoveController({x: 320, y: 480}));
         if(CSW.currScore > localStorage.getItem('highScore')){
           localStorage.setItem('highScore',CSW.currScore);
         }
+        CSW.pool.forEach(function(obstacle) {
+          obstacle.update();
+        });
 
         // console.log(this.text);
         // console.log("Diem hie tai: "+CSW.currScore);
