@@ -31,7 +31,12 @@ var menuState={
     CSW.load.image('playbutton','Assets/Textures/play.png');
     CSW.load.image('maxresdefault','Assets/Textures/maxresdefault.png');
     CSW.load.spritesheet('button_like','Assets/Textures/like.png' , 0,0);
-
+    CSW.load.audio('menu','Assets/sound/music.mp3');
+    CSW.load.audio('click','Assets/sound/Begin/button.wav');
+    CSW.load.audio('dead','Assets/sound/Dead/dead.wav');
+    CSW.load.audio('jump','Assets/sound/Gameplay/jump.wav');
+    CSW.load.audio('star','Assets/sound/Gameplay/star.wav');
+    CSW.load.audio('switch','Assets/sound/Gameplay/colorswitch.wav');
 
   },
 
@@ -42,6 +47,10 @@ var menuState={
     }
 
     CSW.add.sprite(100, 100, 'maxresdefault');
+    CSW.backgroundMusic = CSW.add.audio('menu');
+    CSW.backgroundMusic.volume = 1;
+    CSW.backgroundMusic.loop = true;
+    CSW.backgroundMusic.play();
     // var style = { font: "70px Arial", fill: "#FFFFFF", wordWrap: true, wordWrapWidth: 250, align: "center", backgroundColor: "#000000" };
     // text = CSW.add.text(CSW.configs.GAME_WIDTH/2- 80, 10, "COLOR SWITCH", style);
 
@@ -62,8 +71,10 @@ var menuState={
   },
 
   actionOnClick : function(){
+    CSW.click = CSW.add.audio('click');
+    CSW.click.volume = 1;
+    CSW.click.play();
     CSW.state.start('play');
-
   },
   // update : function () {
   //

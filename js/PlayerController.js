@@ -23,6 +23,9 @@ class PlayerController{
         if (this.tapCount==0) CSW.physics.p2.gravity.y = 1500;
         //this.configs.direction.y = this.sprite.body.velocity.y>=0?-this.configs.direction.y:this.configs.direction.y
         //this.sprite.body.velocity = this.configs.direction.setMagnitude(this.configs.speed);
+        this.jump = CSW.add.audio('jump');
+        this.jump.volume = 1;
+        this.jump.play();
         this.sprite.body.moveUp(this.configs.direction.y*this.configs.speed);
         this.tapCount++;
       }

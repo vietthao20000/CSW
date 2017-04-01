@@ -18,18 +18,18 @@ var gameOver={
 
     var textStyleScore = { font: "50px Arial", fill: "#ffffff", align: "center" };
     var textScore = CSW.add.text(300, 370, CSW.currScore, textStyleScore);
-    var textStyleHightScore = { font: "50px Arial", fill: "#ffffff", align: "center" };
-    var textHightScore = CSW.add.text(300, 480, CSW.hightScore, textStyleHightScore);
+    var textStyleHighScore = { font: "50px Arial", fill: "#ffffff", align: "center" };
+    var textHighScore = CSW.add.text(300, 480, localStorage.getItem('highScore'), textStyleHighScore);
   },
 
   create : function(){
 
     CSW.add.sprite(100,100,'title');
 
-    var style = { font: "42px Arial", fill: "#ff0044", wordWrap: true, wordWrapWidth: 250, align: "center", backgroundColor: "#000000" };
+    var style = { font: "42px Arial", fill: "#ffffff", wordWrap: true, wordWrapWidth: 250, align: "center", backgroundColor: "#000000" };
     text = CSW.add.text(CSW.configs.GAME_WIDTH/2- 80, 320, "SCORE", style);
 
-    var style = { font: "42px Arial", fill: "#ff0044", wordWrap: true, wordWrapWidth: 500, align: "center", backgroundColor: "#000000" };
+    var style = { font: "42px Arial", fill: "#ffffff", wordWrap: true, wordWrapWidth: 500, align: "center", backgroundColor: "#000000" };
     text = CSW.add.text(CSW.configs.GAME_WIDTH/2- 130, 430, "BEST SCORE", style);
 
 

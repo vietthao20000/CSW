@@ -99,7 +99,7 @@ var playState={
     CSW.camera.follow(CSW.player.sprite);
     CSW.camera.deadzone = new Phaser.Rectangle(0, CSW.configs.GAME_HEIGHT/2, CSW.configs.GAME_WIDTH, CSW.configs.GAME_HEIGHT/2);
 
-    console.log("Lever hiện tại: "+ CSW.lever);
+    // console.log("Lever hiện tại: "+ CSW.lever);
   },
 
   // update game state each frame
@@ -117,12 +117,19 @@ var playState={
         obs.used = false;
         obs.position.y = -99999;
         playState.reUseOne();
-        if(CSW.switch.sprite.sprite.alive == false){
+        if (CSW.switch.sprite && !CSW.switch.sprite.sprite.alive){
           CSW.switch.sprite.sprite.destroy();
           CSW.switch = new SwitchController({x: 320, y: CSW.camera.y - CSW.configs.GAME_HEIGHT/4 });
         }
-        if(CSW.star.sprite.alive == false){
+        else if (!CSW.switch.sprite) {
+          CSW.switch = new SwitchController({x: 320, y: CSW.camera.y - CSW.configs.GAME_HEIGHT/4 });
+        }
+
+        if (CSW.star.sprite && !CSW.star.sprite.alive){
           CSW.star.sprite.destroy();
+          CSW.star = new StarController({x: 320, y: CSW.camera.y -CSW.configs.GAME_HEIGHT/4});
+        }
+        else if (!CSW.star.sprite) {
           CSW.star = new StarController({x: 320, y: CSW.camera.y -CSW.configs.GAME_HEIGHT/4});
         }
 
@@ -179,6 +186,9 @@ var playState={
         if(CSW.lever < CSW.pool.length){
           CSW.lever ++;
         }
+        CSW.switch = CSW.add.audio('switch');
+        CSW.switch.volume = 1;
+        CSW.switch.play();
         body.sprite.kill(); // Recycle object here
         CSW.player.sprite.tint = CSW.configs.COLORS[body.sprite.color];
         CSW.player.sprite.color = body.sprite.color;
@@ -188,14 +198,17 @@ var playState={
       }
       else if (body.sprite.key==='star') {
         body.sprite.kill();
+        CSW.star = CSW.add.audio('star');
+        CSW.star.volume = 1;
+        CSW.star.play();
         CSW.text.text = ++CSW.currScore;
-        if(CSW.currScore > CSW.hightScore){
-          CSW.hightScore = CSW.currScore;
+        if(CSW.currScore > localStorage.getItem('highScore')){
+          localStorage.setItem('highScore',CSW.currScore);
         }
 
-        console.log(this.text);
-        console.log("Diem hie tai: "+CSW.currScore);
-        console.log("Hight score: "+CSW.hightScore);
+        // console.log(this.text);
+        // console.log("Diem hie tai: "+CSW.currScore);
+        // console.log("Hight score: "+CSW.highScore);
       }
       else {
         this.lose();
@@ -211,7 +224,10 @@ var playState={
 
 
    lose : function() {
-    console.log("You lose");
+    // console.log("You lose");
+    CSW.dead = CSW.add.audio('dead');
+    CSW.dead.volume = 1;
+    CSW.dead.play();
     CSW.state.start('over');
   }
 }
