@@ -58,7 +58,7 @@ var create = function(){
 
   CSW.player = new PlayerController({
     TAP:Phaser.Keyboard.SPACEBAR,
-    speed: 1.4,
+    speed: 1,
     direction: new Phaser.Point(0,600)
   },"purple");
   CSW.game.physics.p2.enable([CSW.player.sprite],false);

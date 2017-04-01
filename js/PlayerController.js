@@ -13,7 +13,7 @@ class PlayerController{
 
   update() {
     if (CSW.keyboard.isDown(this.configs.TAP)) {
-      if (this.elapsedTime>=0.3) {
+      if (this.elapsedTime>=0.1) {
         this.elapsedTime = 0;
         if (this.tapCount==0) CSW.game.physics.p2.gravity.y = 1500;
         //this.configs.direction.y = this.sprite.body.velocity.y>=0?-this.configs.direction.y:this.configs.direction.y
