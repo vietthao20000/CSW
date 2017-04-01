@@ -233,6 +233,7 @@ CSW.pool.push(new CircleMoveController({x: 320, y: 480}));
     CSW.dead = CSW.add.audio('dead');
     CSW.dead.volume = 1;
     CSW.dead.play();
+    CSW.physics.p2.gravity.y = 0;
     CSW.state.start('over');
   }
 }
