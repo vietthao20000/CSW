@@ -189,7 +189,6 @@ var playState={
       else if (body.sprite.key==='star') {
         body.sprite.kill();
         CSW.text.text = ++CSW.currScore;
-        text.fixedToCamera = true;
         if(CSW.currScore > CSW.hightScore){
           CSW.hightScore = CSW.currScore;
         }
