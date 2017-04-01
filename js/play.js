@@ -62,7 +62,7 @@ var playState={
   //Object trong pool có index càng lớn thì độ khó của nó càng lớn
   CSW.pool = [];
 
-  CSW.switch = new SwitchController("yellow",{x: 320, y: 0});
+  CSW.switch = new SwitchController({x: 320, y: 0});
   CSW.pool.push(new CircleController({x: 320, y: 0}));
   CSW.pool.push(new StripeController({x: 400, y: 400}));
   CSW.pool.push(new StripeController({x: 400, y: 400}));

@@ -1,17 +1,20 @@
 class SwitchController{
-	constructor(color,position) {
+	constructor(position) {
+		var color = SwitchController.random(CSW.player.sprite.color);
     this.sprite = new ObstacleController("switch",color,SwitchController.configs,SwitchController.configs.offsetAngle,position);
+		this.sprite.sprite.body.angularVelocity = 0;
 	}
 
-	random(current) {
-		var usable = [];
-		SwitchController.forEach(function(color) {
-			if (color!==current) {
-				usable.push(color);
-			}
-		});
-		return usable[Math.round(Math.random()*100)%(usable.length-1)];
-	}
+}
+
+SwitchController.random = function(current) {
+	var usable = [];
+	SwitchController.colors.forEach(function(color) {
+		if (color!==current) {
+			usable.push(color);
+		}
+	});
+	return usable[Math.round(Math.random()*100)%(usable.length-1)];
 }
 
 SwitchController.configs= {
