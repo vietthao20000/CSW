@@ -5,6 +5,9 @@ class SwitchController{
 		this.sprite.sprite.body.angularVelocity = 0;
 	}
 
+	update() {
+		this.sprite.sprite.color = SwitchController.random(CSW.player.sprite.color);
+	}
 }
 
 SwitchController.random = function(current) {

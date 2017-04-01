@@ -54,18 +54,19 @@ var playState={
 
   CSW.player = new PlayerController({
     TAP:Phaser.Keyboard.SPACEBAR,
-    speed: 1.4,
+    speed: 1,
     direction: new Phaser.Point(0,600)
   },"purple");
   CSW.physics.p2.enable([CSW.player.sprite],false);
 
   //Object trong pool có index càng lớn thì độ khó của nó càng lớn
   CSW.pool = [];
+  CSW.switch = new SwitchController({x: 320, y: CSW.configs.GAME_HEIGHT/4 });
 
-  CSW.switch = new SwitchController({x: 320, y: 0});
+
   CSW.pool.push(new CircleController({x: 320, y: 0}));
-  CSW.pool.push(new StripeController({x: 400, y: 400}));
-  CSW.pool.push(new StripeController({x: 400, y: 400}));
+  CSW.pool.push(new StripeController({x: 400, y: 480}));
+  CSW.pool.push(new StripeController({x: 400, y: 0}));
   CSW.pool.push(new CircleController({x: 320, y: 0}));
   //lever quyết định cách thức lấy object từ pool, lever càng cao xác suất lấy object có index cao càng lớn
   //lever tăng khi ăn switch
@@ -111,6 +112,10 @@ var playState={
       obs.used = false;
       obs.position.y = -99999;
       playState.reUseOne();
+      if(CSW.switch.sprite.sprite.alive == false){
+        CSW.switch.sprite.sprite.destroy();
+        CSW.switch = new SwitchController({x: 320, y: CSW.camera.y - CSW.configs.GAME_HEIGHT/4 });
+      }
     };
   });
 },
@@ -171,6 +176,8 @@ var playState={
       CSW.pool.forEach(function(obstacle) {
         obstacle.update();
       });
+      // body.sprite.reset(body.sprite.position.x, -CSW.player.yChange + 43/2);
+      // CSW.switch.update();
     }
     else {
       this.lose();
