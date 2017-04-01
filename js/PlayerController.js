@@ -21,7 +21,6 @@ class PlayerController{
         this.sprite.body.moveUp(this.configs.direction.y*this.configs.speed);
         this.tapCount++;
       }
-      this.sprite.body.velocity.x = 0;
     }
     this.elapsedTime += CSW.time.physicsElapsed;
 
