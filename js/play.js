@@ -22,7 +22,7 @@ var playState={
   CSW.time.advancedTiming = true;
 
   //CSW.load.image('background', 'Assets/Map1.png');
-  CSW.load.atlasJSONHash('assets', 'Assets/Textures/buttons.png', 'Assets/Textures/buttons.json');
+
   CSW.load.image('player','Assets/Textures/Player/Player.png');
   CSW.load.image('circle_cyan','Assets/Textures/Obstacles/Circle/cyan.png');
   CSW.load.image('circle_pink','Assets/Textures/Obstacles/Circle/pink.png');
