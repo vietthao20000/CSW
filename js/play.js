@@ -13,7 +13,7 @@
 var playState={
   // preparations before game starts
    preload : function(){
-    CSW.score = 0;
+    CSW.currScore = 0;
     CSW.scale.pageAlignVertically = true;
     CSW.scale.pageAlignHorizontally = true;
     CSW.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
@@ -69,7 +69,7 @@ var playState={
     CSW.pool.push(new StripeController({x: 400, y: 480}));
     CSW.pool.push(new StripeController({x: 400, y: 0}));
     CSW.pool.push(new CircleController({x: 320, y: 0}));
-    new StarController({x: 320, y: 0});
+    CSW.star = new StarController({x: 320, y: -CSW.configs.GAME_HEIGHT/4});
     //lever quyết định cách thức lấy object từ pool, lever càng cao xác suất lấy object có index cao càng lớn
     //lever tăng khi ăn switch
     //lever max là CSW.pool.length
@@ -118,6 +118,11 @@ var playState={
           CSW.switch.sprite.sprite.destroy();
           CSW.switch = new SwitchController({x: 320, y: CSW.camera.y - CSW.configs.GAME_HEIGHT/4 });
         }
+        if(CSW.star.sprite.alive == false){
+          CSW.star.sprite.destroy();
+          CSW.star = new StarController({x: 320, y: CSW.camera.y -CSW.configs.GAME_HEIGHT/4});
+        }
+
       };
     });
   },
@@ -167,20 +172,26 @@ var playState={
     //
     //  The first argument may be null or not have a sprite property, such as when you hit the world bounds.
     if (body) {
-      if (body.sprite.key==='star') {
+      if (body.sprite.key==='switch') {
         if(CSW.lever < CSW.pool.length){
           CSW.lever ++;
           console.log("lever hiện tại: "+CSW.lever);
         }
-        body.sprite.kill(); // Recycle object here
-      }
-      else if (body.sprite.key==='switch') {
         body.sprite.kill(); // Recycle object here
         CSW.player.sprite.tint = CSW.configs.COLORS[body.sprite.color];
         CSW.player.sprite.color = body.sprite.color;
         CSW.pool.forEach(function(obstacle) {
           obstacle.update();
         });
+      }
+      else if (body.sprite.key==='star') {
+        body.sprite.kill();
+        CSW.currScore += 1;
+        if(CSW.currScore > CSW.hightScore){
+          CSW.hightScore = CSW.currScore;
+        }
+        console.log("Diem hie tai: "+CSW.currScore);
+        console.log("Hight score: "+CSW.hightScore);
       }
       else {
         this.lose();
