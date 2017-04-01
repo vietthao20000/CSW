@@ -9,6 +9,9 @@ class PlayerController{
     this.sprite.color = color;
     this.yOrig = CSW.configs.GAME_HEIGHT/2;
     this.yChange = 0;
+    this.sprite.inputEnabled = true;
+    this.sprite.input.enableDrag();
+    this.sprite.input.allowVerticalDrag = false;
   }
 
   update() {
