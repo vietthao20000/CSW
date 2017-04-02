@@ -67,11 +67,18 @@ var playState={
     CSW.pool = [];
     CSW.switch = new SwitchController({x: 320, y: CSW.configs.GAME_HEIGHT/4 });
 
-CSW.pool.push(new StripeMoveController({x: 320, y: 480}));
+
+
+
     CSW.pool.push(new CircleController({x: 320, y: 0}));
+    CSW.pool.push(new CircleMirrowController({x: 320, y: 480}));
     CSW.pool.push(new StripeController({x: 400, y: 480}));
-    CSW.pool.push(new StripeController({x: 400, y: 0}));
-    CSW.pool.push(new CircleController({x: 320, y: 0}));
+    CSW.pool.push(new StripeMirrowController({x: 400, y: 0}));
+    CSW.pool.push(new DoubleCircleController({x: 320, y: 0}));
+    CSW.pool.push(new MirrowDoubleCircleController({x: 320, y: 480}));
+    CSW.pool.push(new StripeMoveController({x: 320, y: 480}));
+    CSW.pool.push(new MirrowDoubleStripeController({x: 320, y: 480}));
+    CSW.pool.push(new StripeMoveController({x: 320, y: 480}));
     CSW.pool.push(new CircleMoveController({x: 320, y: 480}));
 
     CSW.star = new StarController({x: 320, y: -CSW.configs.GAME_HEIGHT/4});
@@ -82,9 +89,15 @@ CSW.pool.push(new StripeMoveController({x: 320, y: 480}));
 
     //Để chắc chắn rằng ban đầu chỉ có 2 Object trong pool được dùng
     for (let i = 2; i < CSW.pool.length; i++) {
-      CSW.pool[i].parts.forEach(function(part){
-        part.kill();
-      });
+      if(CSW.pool[i].killMySelf == true){
+        CSW.pool[i].killMySelfFunc();
+      }
+      else {
+        CSW.pool[i].parts.forEach(function(part){
+          part.kill();
+        });
+      }
+
       CSW.pool[i].used = false;
       CSW.pool[i].position.y = -99999;
     }
@@ -114,9 +127,15 @@ CSW.pool.push(new StripeMoveController({x: 320, y: 480}));
     CSW.pool.forEach(function(obs){
       obs.update2();
       if(obs.position.y > CSW.camera.y + CSW.configs.GAME_HEIGHT) {
-        obs.parts.forEach( function(part, index) {
-          part.kill();
-        });
+        if(obs.killMySelf == true){
+          obs.killMySelfFunc();
+        }
+        else {
+          obs.parts.forEach( function(part, index) {
+            part.kill();
+          });
+        }
+
         obs.used = false;
         obs.position.y = -99999;
         playState.reUseOne();
@@ -146,10 +165,16 @@ CSW.pool.push(new StripeMoveController({x: 320, y: 480}));
     var rd = Math.floor((Math.random() * CSW.lever));
     if(CSW.pool[rd].used == false) {
       CSW.pool[rd].update();
-      CSW.pool[rd].parts.forEach(function(part){
-        part.reset(part.position.x, -CSW.player.yChange);
-        part.body.angularVelocity = 2.5;
-      });
+      if(CSW.pool[rd].reUseMySelf == true){
+        CSW.pool[rd].reUseMySelfFunc();
+      }
+      else{
+        CSW.pool[rd].parts.forEach(function(part){
+          part.reset(part.position.x, -CSW.player.yChange);
+          part.body.angularVelocity = 2.5;
+        });
+      }
+
       CSW.pool[rd].used = true;
       CSW.pool[rd].position.y = -CSW.player.yChange;
     }
@@ -157,10 +182,16 @@ CSW.pool.push(new StripeMoveController({x: 320, y: 480}));
       for (let i = CSW.lever - 1; i >= 0; i--) {
         if(CSW.pool[i].used == false) {
           CSW.pool[i].update();
-          CSW.pool[i].parts.forEach(function(part){
-            part.reset(part.position.x, -CSW.player.yChange);
-            part.body.angularVelocity = 2.5;
-          });
+          if(CSW.pool[i].reUseMySelf == true){
+            CSW.pool[i].reUseMySelfFunc();
+          }
+          else {
+            CSW.pool[i].parts.forEach(function(part){
+              part.reset(part.position.x, -CSW.player.yChange);
+              part.body.angularVelocity = 2.5;
+            });
+          }
+
           CSW.pool[i].used = true;
           CSW.pool[i].position.y = -CSW.player.yChange;
           break;
