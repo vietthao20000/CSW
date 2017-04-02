@@ -4,6 +4,7 @@ class StripeMoveController{
 
     StripeMoveController.colors.forEach(function(color) {
       let sprite = new ObstacleController("stripe_"+color.color,color.color,StripeMoveController.configs,color.offsetAngle,position);
+      sprite.sprite.body.velocity.x = 200;
       parts.push(sprite.sprite);
     });
 

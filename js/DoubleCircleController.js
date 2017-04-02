@@ -1,7 +1,7 @@
 class DoubleCircleController {
   constructor(position) {
-    this.partLeft = new CircleController({x : position.x - CSW.configs.GAME_WIDTH/5, y : position.y});
-    this.partRight = new CircleMirrowController({x : position.x + CSW.configs.GAME_WIDTH/5, y : position.y});
+    this.partLeft = new CircleController({x : position.x - CSW.configs.GAME_WIDTH/5.2, y : position.y});
+    this.partRight = new CircleMirrowController({x : position.x + CSW.configs.GAME_WIDTH/5.2, y : position.y});
 
     this.partLeft.update();
     this.partRight.update();

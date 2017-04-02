@@ -69,17 +69,18 @@ var playState={
 
 
 
-
+    CSW.pool.push(new StripeMoveController({x: 320, y: 480}));
     CSW.pool.push(new CircleController({x: 320, y: 0}));
     CSW.pool.push(new CircleMirrowController({x: 320, y: 480}));
     CSW.pool.push(new StripeController({x: 400, y: 480}));
     CSW.pool.push(new StripeMirrowController({x: 400, y: 0}));
     CSW.pool.push(new DoubleCircleController({x: 320, y: 0}));
+    CSW.pool.push(new DoubleStripeController({x: 320, y: 0}));
     CSW.pool.push(new MirrowDoubleCircleController({x: 320, y: 480}));
-    CSW.pool.push(new StripeMoveController({x: 320, y: 480}));
     CSW.pool.push(new MirrowDoubleStripeController({x: 320, y: 480}));
-    CSW.pool.push(new StripeMoveController({x: 320, y: 480}));
     CSW.pool.push(new CircleMoveController({x: 320, y: 480}));
+    CSW.pool.push(new CircleMoveController({x: 320, y: 480}));
+    CSW.pool.push(new StripeMoveController({x: 320, y: 480}));
 
     CSW.star = new StarController({x: 320, y: -CSW.configs.GAME_HEIGHT/4});
     //lever quyết định cách thức lấy object từ pool, lever càng cao xác suất lấy object có index cao càng lớn

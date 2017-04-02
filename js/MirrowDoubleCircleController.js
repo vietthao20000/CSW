@@ -1,7 +1,7 @@
 class MirrowDoubleCircleController {
   constructor(position) {
-    this.partLeft = new CircleController({x : position.x - CSW.configs.GAME_WIDTH/5, y : position.y});
-    this.partRight = new CircleMirrowController({x : position.x + CSW.configs.GAME_WIDTH/5, y : position.y});
+    this.partLeft = new CircleController({x : position.x - CSW.configs.GAME_WIDTH/5.15, y : position.y});
+    this.partRight = new CircleMirrowController({x : position.x + CSW.configs.GAME_WIDTH/5.15, y : position.y});
 
     this.partLeft.update();
     this.partRight.update();
@@ -14,7 +14,7 @@ class MirrowDoubleCircleController {
   update(){
     this.partLeft.update();
     this.partRight.update();
-    this.changeAngularVelocity(1);
+    this.changeAngularVelocity(0.7);
   }
 
   update2(){
@@ -34,11 +34,11 @@ class MirrowDoubleCircleController {
   reUseMySelfFunc() {
     this.partLeft.parts.forEach(function(part){
       part.reset(part.position.x, -CSW.player.yChange);
-      part.body.angularVelocity = 1;
+      part.body.angularVelocity = 0.7;
     });
     this.partRight.parts.forEach(function(part){
       part.reset(part.position.x, -CSW.player.yChange);
-      part.body.angularVelocity = -1;
+      part.body.angularVelocity = -0.7;
     });
     this.used = true;
   }
