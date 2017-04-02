@@ -6,7 +6,6 @@ class CircleMirrowController{
       let sprite = new ObstacleController("circle_"+color,color,CircleMirrowController.configs,CircleMirrowController.configs.offsetAngle,position);
       if(color == "cyan" || color == "purple"){
         sprite.sprite.body.angle += 180;
-        console.log(color);
       }
       parts.push(sprite.sprite);
     });
