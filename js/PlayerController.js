@@ -17,7 +17,7 @@ class PlayerController{
   }
 
   update() {
-    if (CSW.keyboard.isDown(this.configs.TAP)) {
+    if (CSW.keyboard.isDown(this.configs.TAP) || CSW.input.activePointer.isDown) {
       if (this.elapsedTime>=0.1) {
         this.elapsedTime = 0;
         if (this.tapCount==0) CSW.physics.p2.gravity.y = 1500;
