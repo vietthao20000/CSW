@@ -1,0 +1,5 @@
+class FlyBarController {
+	constructor(y) {
+		
+	}
+}

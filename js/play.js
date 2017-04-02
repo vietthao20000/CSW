@@ -167,7 +167,7 @@ CSW.pool.push(new StripeMoveController({x: 320, y: 480}));
         }
       }
     }
-    console.log(CSW.pool);
+    // console.log(CSW.pool);
   },
 
   // before camera render (mostly for debug)

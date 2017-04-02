@@ -14,10 +14,10 @@ class ObstacleController{
 	}
 
 	update(){
-		console.log(this.sprite.position.y);
+		// console.log(this.sprite.position.y);
 		if(this.sprite.position.y > CSW.camera.y + CSW.configs.GAME_HEIGHT){
 			this.sprite.kill;
-			console.log("kill");
+			// console.log("kill");
 		}
 	}
 }

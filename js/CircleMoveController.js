@@ -4,7 +4,7 @@ class CircleMoveController{
 
     CircleMoveController.colors.forEach(function(color) {
       let sprite = new ObstacleController("circle_"+color,color,CircleMoveController.configs,CircleMoveController.configs.offsetAngle,position);
-      console.log(sprite);
+      // console.log(sprite);
       parts.push(sprite.sprite);
     });
 
