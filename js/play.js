@@ -23,21 +23,21 @@ var playState={
 
     CSW.time.advancedTiming = true;
 
-    //CSW.load.image('background', 'Assets/Map1.png');
-    CSW.load.atlasJSONHash('assets', 'Assets/Textures/buttons.png', 'Assets/Textures/buttons.json');
-    CSW.load.image('player','Assets/Textures/Player/Player.png');
-    CSW.load.image('circle_cyan','Assets/Textures/Obstacles/Circle/cyan.png');
-    CSW.load.image('circle_pink','Assets/Textures/Obstacles/Circle/pink.png');
-    CSW.load.image('circle_purple','Assets/Textures/Obstacles/Circle/purple.png');
-    CSW.load.image('circle_yellow','Assets/Textures/Obstacles/Circle/yellow.png');
-    CSW.load.image('stripe_cyan','Assets/Textures/Obstacles/Stripes/cyan.png');
-    CSW.load.image('stripe_pink','Assets/Textures/Obstacles/Stripes/pink.png');
-    CSW.load.image('stripe_purple','Assets/Textures/Obstacles/Stripes/purple.png');
-    CSW.load.image('stripe_yellow','Assets/Textures/Obstacles/Stripes/yellow.png');
-    CSW.load.image('switch','Assets/Textures/Obstacles/switch.png');
-    CSW.load.image('star','Assets/Textures/Obstacles/Star/Star.png');
-    CSW.load.physics('circle_physics','Assets/Textures/Obstacles/Circle/circle.json');
-    CSW.load.physics('stripe_physics','Assets/Textures/Obstacles/Stripes/stripe.json');
+    //CSW.load.image('background', './Assets/Map1.png');
+    CSW.load.atlasJSONHash('assets', './Assets/Textures/buttons.png', './Assets/Textures/buttons.json');
+    CSW.load.image('player','./Assets/Textures/Player/Player.png');
+    CSW.load.image('circle_cyan','./Assets/Textures/Obstacles/Circle/cyan.png');
+    CSW.load.image('circle_pink','./Assets/Textures/Obstacles/Circle/pink.png');
+    CSW.load.image('circle_purple','./Assets/Textures/Obstacles/Circle/purple.png');
+    CSW.load.image('circle_yellow','./Assets/Textures/Obstacles/Circle/yellow.png');
+    CSW.load.image('stripe_cyan','./Assets/Textures/Obstacles/Stripes/cyan.png');
+    CSW.load.image('stripe_pink','./Assets/Textures/Obstacles/Stripes/pink.png');
+    CSW.load.image('stripe_purple','./Assets/Textures/Obstacles/Stripes/purple.png');
+    CSW.load.image('stripe_yellow','./Assets/Textures/Obstacles/Stripes/yellow.png');
+    CSW.load.image('switch','./Assets/Textures/Obstacles/switch.png');
+    CSW.load.image('star','./Assets/Textures/Obstacles/Star/Star.png');
+    CSW.load.physics('circle_physics','./Assets/Textures/Obstacles/Circle/circle.json');
+    CSW.load.physics('stripe_physics','./Assets/Textures/Obstacles/Stripes/stripe.json');
 
     // CSW.scale.pageAlignHorizontally = true;
     // CSW.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
