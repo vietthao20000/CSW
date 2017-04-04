@@ -2,10 +2,6 @@ var gameOver={
 
   preload : function(){
     CSW.world.setBounds(0,0, CSW.configs.GAME_WIDTH, CSW.configs.GAME_HEIGHT);
-    CSW.scale.pageAlignVertically = true;
-    CSW.scale.pageAlignHorizontally= true;
-    CSW.scale.scaleMode= Phaser.ScaleManager.SHOW_ALL;
-    CSW.time.advancedTiming= true;
 
     CSW.load.spritesheet('button_replay','Assets/Textures/replay.png' , 0,0);
     CSW.load.spritesheet('button_home','Assets/Textures/home.png' , 0,0);
